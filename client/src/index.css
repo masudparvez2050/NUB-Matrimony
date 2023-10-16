@@ -8,7 +8,7 @@
     font-family: 'SolaimanLipiNormal';
     font-style: normal;
     font-weight: normal;
-    src: local('/font/solaimanlipi.woff'), url('/font/solaimanlipi.woff') format('woff');
+    src: local('./assets/font/solaimanlipi.woff'), url('./assets/font/solaimanlipi.woff') format('woff');
     }
 
 
