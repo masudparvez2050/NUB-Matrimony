@@ -1,11 +1,13 @@
 import React from "react";
-import Navbar from "../../Components/Layout/Navbar";
+import Header from "../../Components/Layout/Header";
+import Footer from "../../Components/Layout/Footer";
 
 function AboutUs() {
   return (
     <div>
-      <Navbar />
+      <Header/>
       <h1 className="text-xl font-bold">This is About Page</h1>
+      <Footer />
     </div>
   );
 }

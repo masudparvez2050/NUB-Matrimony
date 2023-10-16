@@ -9,11 +9,19 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/findpartner">Find Partner</Link>
+          </li>
+        <li>
+          <Link to="/guide">Guide</Link>
+        </li>
+        <li>
           <Link to="/about">About Us</Link>
         </li>
-        <li>Home</li>
-        <li>Home</li>
-        <li>Home</li>
+        <li>
+          <Link to="/faq">FAQ</Link>
+          </li>
+        <li>
+          <Link to="/contact">Contact</Link></li>
       </ul>
     </div>
   );
