@@ -15,7 +15,7 @@ function Hero() {
         <div className="w-[800px] items-center flex justify-center">
           <img src="/src/assets/images/hadith-bg-top.svg" alt="" />
         </div>
-        <div className="bg-white rounded-3xl w-[800px] p-5 border border-violet-700 opacity-60">
+        <div className="bg-white rounded-3xl w-[400px] xl:w-[800px] p-5 border border-violet-700 opacity-60">
           <p className="text-gray-900 font-medium text-lg">
             When a person gets married he has completed half of his deen, so let
             him fear Allah with <br />
