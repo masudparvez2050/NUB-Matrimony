@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="flex justify-center items-center text-center max-w-screen-xl mx-auto mb-20">
+    <div className="flex justify-center items-center text-center max-w-screen-xl mx-auto mb-15">
       <div className="mt-20">
         {" "}
         <h1 className=" text-7xl mb-5 text-indigo-900 font-bold">

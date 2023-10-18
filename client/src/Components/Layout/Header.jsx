@@ -24,7 +24,7 @@ const Header = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img
-            src="/src/assets/images/logo.svg" // Add your logo source here
+            src="/src/assets/images/NUBFAVI.png" // Add your logo source here
             alt="Logo"
             className=" h-[5rem] w-[12rem] " // Customize the logo size
           />

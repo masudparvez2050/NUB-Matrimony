@@ -12,7 +12,7 @@ function Home() {
     <div>
       <div
         className="
-      md:bg-[url('/src/assets/images/bg.png')]
+      md:bg-[url('/src/assets/images/NNbg.jpg')]
       bg-[url('/src/assets/images/bg-mobile.png')]
       bg-cover
       "

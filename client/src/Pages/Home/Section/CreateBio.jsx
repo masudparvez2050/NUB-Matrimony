@@ -21,6 +21,7 @@ function CreateBio() {
           How to Crete Biodata
         </Link>
       </div>
+      <div className="mb-20"></div>
     </div>
   );
 }
