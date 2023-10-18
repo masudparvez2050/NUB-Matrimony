@@ -2,7 +2,10 @@
 
 import Footer from "../../Components/Layout/Footer";
 import Header from "../../Components/Layout/Header";
+import CreateBio from "./Section/CreateBio";
 import Hero from "./Section/Hero";
+import UserStatistics from "./Section/UserStatistics"
+import HowToWorks from "./Section/HowToWorks"
 
 function Home() {
   return (
@@ -11,6 +14,9 @@ function Home() {
         {" "}
         <Header />
         <Hero />
+        <CreateBio/>
+        <UserStatistics/>
+        <HowToWorks/>
         <Footer />
       </div>
     </div>

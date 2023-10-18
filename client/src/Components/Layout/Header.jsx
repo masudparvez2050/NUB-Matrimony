@@ -53,14 +53,14 @@ const Header = () => {
                   <a
                     href="#"
                     onClick={() => changeLanguage("Bangla")}
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                    className="block px-4 py-2 text-gray-800 hover:bg-pink-200"
                   >
                     Bangla
                   </a>
                   <a
                     href="#"
                     onClick={() => changeLanguage("English")}
-                    className="block px-4 py-2 text-gray-800 hover-bg-gray-200"
+                    className="block px-4 py-2 text-gray-800 hover:bg-pink-200"
                   >
                     English
                   </a>
