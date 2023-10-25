@@ -11,7 +11,7 @@ function Contact() {
       <h1 className="my-6 text-4xl p-8 text-center text-white font-bold bg-rose-600">This is Contact Page</h1>
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[550px]">
-          <form action="https://formbold.com/s/FORM_ID" method="POST">
+          <form action="/" method="POST">
             <div className="mb-5">
               <label
                 for="name"
