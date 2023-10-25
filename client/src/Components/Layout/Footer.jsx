@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div>
-      <footer className="flex flex-col items-center bg-indigo-700 text-center text-white dark:bg-neutral-600">
+      <footer className="flex flex-col items-center bg-violet-900 text-center text-white dark:bg-neutral-600">
         <div className="container pt-9">
           <div className="mb-9 flex justify-center">
             <a
@@ -88,10 +88,10 @@ function Footer() {
           </div>
         </div>
 
-        <div className="w-full bg-indigo-600 p-4 text-center text-white dark:bg-neutral-700 dark:text-neutral-200">
+        <div className="w-full bg-violet-900 p-4 text-center text-white dark:bg-neutral-700 dark:text-neutral-200">
           © 2023 Copyright :{" "}
           <a className="text-white dark:textwhite" href="/">
-            Team Matrimony | ECSE 4B
+            Team NUB Matrimony | ECSE 4B
           </a>
         </div>
       </footer>

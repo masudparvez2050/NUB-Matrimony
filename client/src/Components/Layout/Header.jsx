@@ -26,7 +26,7 @@ const Header = () => {
           <img
             src="/src/assets/images/NUBFAVI.png" // Add your logo source here
             alt="Logo"
-            className=" h-[5rem] w-[12rem] " // Customize the logo size
+            className=" h-[5rem] w-[12rem] ml-3 mt-2" // Customize the logo size
           />
           {/* <div className="text-white text-xl font-bold">Your Logo Name</div> */}
         </div>
@@ -108,7 +108,7 @@ const Header = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="sm:hidden">
-          <ul>
+          <ul >
             <li>
               {" "}
               <Link to="/">Home</Link>
