@@ -30,13 +30,43 @@ const Header = () => {
           />
           {/* <div className="text-white text-xl font-bold">Your Logo Name</div> */}
         </div>
-        <div className="hidden sm:flex space-x-4">
-          <Link to="/">Home</Link>
-          <Link to="/findpartner">Find Partner</Link>
-          <Link to="/guide">Guide</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
+        <div className="hidden sm:flex space-x-4 text-lg  text-gray-600">
+          <Link
+            to="/"
+            className="hover:underline hover:font-semibold hover:text-violet-700"
+          >
+            Home
+          </Link>
+          <Link
+            to="/findpartner"
+            className="hover:underline hover:font-semibold hover:text-violet-700"
+          >
+            Find Partner
+          </Link>
+          <Link
+            to="/guide"
+            className="hover:underline hover:font-semibold hover:text-violet-700"
+          >
+            Guide
+          </Link>
+          <Link
+            to="/about"
+            className="hover:underline hover:font-semibold hover:text-violet-700"
+          >
+            About Us
+          </Link>
+          <Link
+            to="/faq"
+            className="hover:underline hover:font-semibold hover:text-violet-700"
+          >
+            FAQ
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:underline hover:font-semibold hover:text-violet-700"
+          >
+            Contact
+          </Link>
         </div>
         <div className="flex items-center">
           {/* ------------start Drop down button--------------- */}
@@ -108,7 +138,7 @@ const Header = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="sm:hidden">
-          <ul >
+          <ul>
             <li>
               {" "}
               <Link to="/">Home</Link>

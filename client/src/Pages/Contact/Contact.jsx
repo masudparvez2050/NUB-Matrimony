@@ -1,20 +1,21 @@
-import React from 'react'
-import Header from '../../Components/Layout/Header'
-import Footer from '../../Components/Layout/Footer'
+import React from "react";
+import Header from "../../Components/Layout/Header";
+import Footer from "../../Components/Layout/Footer";
 
 function Contact() {
   return (
     <div>
-        <Header/>
+      <Header />
 
-
-      <h1 className="my-6 text-4xl p-8 text-center text-white font-bold bg-rose-600">This is Contact Page</h1>
+      <div className=" text-4xl h-48 text-center text-white font-bold flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <h1 className="">Contact us</h1>
+      </div>
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[550px]">
           <form action="/" method="POST">
             <div className="mb-5">
               <label
-                for="name"
+                htmlFor="name"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Full Name
@@ -73,9 +74,7 @@ function Contact() {
               ></textarea>
             </div>
             <div>
-              <button
-                className="bg-rose-700 hover:bg-rose-600 rounded-md py-3 px-8 text-base font-semibold text-white outline-none"
-              >
+              <button className="bg-rose-700 hover:bg-rose-600 rounded-md py-3 px-8 text-base font-semibold text-white outline-none">
                 Submit
               </button>
             </div>
@@ -83,11 +82,9 @@ function Contact() {
         </div>
       </div>
 
-
-
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
