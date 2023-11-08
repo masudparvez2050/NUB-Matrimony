@@ -4,50 +4,50 @@ import Footer from "../../Components/Layout/Footer";
 
 const items = [
   {
-    title: "Lorem ipsum dolor consectetur adipisicing elit. Sunt, unde.?",
+    title: "What is NUB Metrimony? How does it work?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "NUB Metrimony is a Bangladeshi Islamic Matrimony website. It started its journey on January 1, 2021. In the website someone can find biodata of Upazila-based practicing Muslim brides and grooms and also makes contact with the guardians of them. At the same time, brides and grooms can create and submit biodata on the website if they want.",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur  Sunt, unde.?",
+    title: "How much does it cost to submit biodata?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "Biodata can be submitted to NUB Metrimony completely free.",
   },
   {
-    title: "Lorem ipsumconsectetur adipisicing elit. Sunt, unde.?",
+    title: "Is this website open to everyone?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "No, this website is not open to everyone, only for practicing Muslims.",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur  Sunt, unde.?",
+    title: "Are there any special requirements for making biodata?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "For Men: i) It is obligatory to pray five times a day. ii) Keeping wajib beard maintaining sunnah. iii) Not letting the garment hang down below the ankles. iv) Parental permission is obligatory. For Women: i) It is mandatory to pray five times a day. ii) Must be veiled including 'Niqab' following the creed of 'Ahlus Sunnah Wal Jamaah' iii) It is a must to take parental permission.",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. .?",
+    title: "How confidential will my information be when I submit my biodata to NUB Metrimony? How much will be published?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "Your and your parents' name, mobile number and email address will be kept confidential after your biodata is approved. All other information can be seen by general users. That is, common users can read your biodata but not know your identity. If someone is interested to come in contact with you for marriage, then by using 'Connection,' he or she will be able to see your name, parents' mobile number and email address and can make consultation for wedding. Note: Read 'Privacy Policy' for details.",
   },
   {
     title:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, unde.?",
+      "Why is my biodata not approved?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "Biodata is not approved for various reasons. A few clarifications are mentioned below. i) If biodata is submitted on our website without informing the parents. ii) If you write your mobile number in the parents' number box. iii) If you do not pray five times a day regularly. iv) If wazib beard is not kept maintaining sunnah (Except those whose beard is not grown due to natural causes) v) For men, if the garment is not worn on the ankles. vi) In case of women, if they are not veiled including 'niqab' vii) If any false information is given in the biodata viii) If the answer to the specific question is given in a different way without giving a clear reply. For example, many people write 'Alhamdulillah' or 'Hum' etc. But 'Yes/No' is not clearly understood by it. ix) If something that goes against Islam is written",
   },
   {
-    title: "Lorem ipsum dolor sit amet  elit. Sunt, unde.?",
+    title: "My resume is not approved because of some wrong information. Will I be able to submit my resume again?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "Yes, you can do that. If you submit your resume after correcting the wrong information you wrote in the box earlier, your corrected resume will be approved again In sha Allah. However, if the resume is not approved due to not following the rules of NUB Metrimony, then it will not be approved.",
   },
   {
-    title: "Lorem ipsum. Sunt, unde.?",
+    title: "Can I upload my biodata if I do not keep beard following sunnah in spite of being a regular performer of saying prayer (Salah) five times a day?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "Your biodata will not be approved. Only those who are keeping wajib beard are allowed to submit their biodatas. (Except the persons whose beard is not grown due to natural causes)",
   },
   {
-    title: "Lorem ipsum dolor sit amet consectetur adipisicing ?",
+    title: "Could I interact with someone directly if his or her biodata is chosen by me?",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt deleniti at omnis totam dignissimos accusantium unde reprehenderit incidunt nisi?",
+      "NUB Metrimony does not support the direct communication with brides or grooms. The connection with only guardians of brides or grooms is permitted.",
   },
 ];
 
@@ -73,7 +73,7 @@ function FAQ() {
           {items.map((item, index) => (
             <div key={index} className="mb-2">
               <button
-                className="w-full bg-white drop-shadow p-5 flex justify-between items-center hover:bg-gray-100 rounded-md"
+                className="w-full bg-white drop-shadow p-5 flex justify-between items-center hover:bg-gray-100 rounded-md text-left"
                 onClick={() => handleClick(index)}
               >
                 <span>{item.title}</span>
