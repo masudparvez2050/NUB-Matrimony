@@ -11,8 +11,10 @@ function AboutUs() {
           <h1 className="">About Us</h1>
         </div>
         <div className="flex justify-center items-center text-left max-w-screen-xl mx-auto mb-15">
-          <div className="m-6 p-8 text-slate-600 leading-loose text-lg text-center">
-            <p>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+          <div className="m-6 px-20 text-slate-800 leading-loose text-lg">
+            <p className="text-center">
+              بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+            </p>
             <p>
               {" "}
               Indeed, all praise belongs to Allah. We seek refuge in Him from

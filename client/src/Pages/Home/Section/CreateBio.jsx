@@ -7,20 +7,24 @@ function CreateBio() {
       <h1 className="font-bold text-4xl text-indigo-900 m-10 p-3">
         Create biodata in NUB Matrimony Completely free of cost
       </h1>
-      <div className="flex justify-center">
+      {/* ---------------------------------- */}
+      <div className="mt-2 pt-2 flex justify-center text-lg text-white flex-wrap">
         <Link
           to="/"
-          className="border-2 mr-4 rounded-full p-4 bg-rose-500 text-white font-bold hover:bg-rose-600"
+          className="border-2 mr-4 rounded-full p-4 bg-rose-500 text-white font-bold hover:bg-rose-600 mt-4 sm:mt-0"
         >
           + Create Your Biodata
         </Link>
+
         <Link
           to="/"
-          className="border-2 mr-4 rounded-full p-4 bg-rose-500 text-white font-bold hover:bg-rose-600"
+          className="border-2 mr-4  rounded-full p-4 bg-rose-500 text-white font-bold hover:bg-rose-600 mt-4 sm:mt-0"
         >
           How to Crete Biodata
         </Link>
       </div>
+      {/* ---------------------------------- */}
+
       <div className="mb-20"></div>
     </div>
   );

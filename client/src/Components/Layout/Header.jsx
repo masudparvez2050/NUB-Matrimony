@@ -137,27 +137,27 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="sm:hidden">
-          <ul>
-            <li>
+        <div className="sm:hidden bg-pink-100 border rounded-md p-4 text-end">
+          <ul className="">
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               {" "}
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               <Link to="/findpartner">Find Partner</Link>
             </li>
-            <li>
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               {" "}
               <Link to="/guide">Guide</Link>
             </li>
-            <li>
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               <Link to="/about">About Us</Link>
             </li>
-            <li>
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               {" "}
               <Link to="/faq">FAQ</Link>
             </li>
-            <li>
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
