@@ -24,7 +24,7 @@ const Header = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img
-            src="/src/assets/images/NUBFAVI.png" // Add your logo source here
+            src="/src/assets/images/Logo.png" // Add your logo source here
             alt="Logo"
             className=" h-[5rem] w-[12rem] ml-3 mt-2" // Customize the logo size
           />
@@ -73,7 +73,7 @@ const Header = () => {
           <div className="relative inline-block text-left mr-2">
             <button
               onClick={toggleDropdown}
-              className="p-2  rounded-lg hover:bg-pink-400 hover:text-white border-2 border-pink-700"
+              className="p-2  rounded-lg hover:bg-pink-400 hover:text-white "
             >
               {selectedLanguage}
             </button>
@@ -83,14 +83,14 @@ const Header = () => {
                   <a
                     href="#"
                     onClick={() => changeLanguage("Bangla")}
-                    className="block px-4 py-2 text-gray-800 hover:bg-pink-200"
+                    className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
                   >
                     Bangla
                   </a>
                   <a
                     href="#"
                     onClick={() => changeLanguage("English")}
-                    className="block px-4 py-2 text-gray-800 hover:bg-pink-200"
+                    className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
                   >
                     English
                   </a>

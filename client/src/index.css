@@ -5,17 +5,18 @@
 
 
 @font-face {
-    font-family: 'SolaimanLipiNormal';
+    font-family: 'SolaimanLipiNormal', 'BASISGROTESQUEPRO-REGULAR';
     font-style: normal;
     font-weight: normal;
     src: local('./assets/font/solaimanlipi.woff'), url('./assets/font/solaimanlipi.woff') format('woff');
+    src: local('./assets/font/BASISGROTESQUEPRO-REGULAR.woff'), url('./assets/font/BASISGROTESQUEPRO-REGULAR.woff') format('woff');
     }
 
 
     html {
         margin: 0;
         padding: 0;
-        font-family: 'SolaimanLipiNormal', 'Roboto', sans-serif !important;
+        font-family: 'BASISGROTESQUEPRO-REGULAR', 'SolaimanLipiNormal', 'Roboto', sans-serif !important;
       
         /* 'Hind Siliguri' */
       
