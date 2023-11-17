@@ -30,40 +30,40 @@ const Header = () => {
           />
           {/* <div className="text-white text-xl font-bold">Your Logo Name</div> */}
         </div>
-        <div className="hidden sm:flex space-x-4 text-lg  text-gray-600">
+        <div className="hidden sm:flex space-x-6 text-lg  text-[#39182a] font-semibold">
           <Link
             to="/"
-            className="hover:underline hover:font-semibold hover:text-violet-700"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
           >
             Home
           </Link>
           <Link
             to="/findpartner"
-            className="hover:underline hover:font-semibold hover:text-violet-700"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
           >
             Find Partner
           </Link>
           <Link
             to="/guide"
-            className="hover:underline hover:font-semibold hover:text-violet-700"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
           >
             Guide
           </Link>
           <Link
             to="/about"
-            className="hover:underline hover:font-semibold hover:text-violet-700"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
           >
             About Us
           </Link>
           <Link
             to="/faq"
-            className="hover:underline hover:font-semibold hover:text-violet-700"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
           >
             FAQ
           </Link>
           <Link
             to="/contact"
-            className="hover:underline hover:font-semibold hover:text-violet-700"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
           >
             Contact
           </Link>
@@ -137,7 +137,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="sm:hidden bg-pink-100 border rounded-md p-4 text-end">
+        <div className="sm:hidden bg-[#fbbdec] border rounded-md p-4 text-end z-10 absolute w-[350px] ">
           <ul className="">
             <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               {" "}
