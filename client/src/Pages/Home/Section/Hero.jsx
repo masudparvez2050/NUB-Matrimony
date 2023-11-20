@@ -1,18 +1,19 @@
 import React from "react";
 import { useLanguage } from "../../../contextAPI/ChangeLanguage";
+import "./Hero.css";
 
 function Hero() {
   const { changeLanguage} = useLanguage();
   return (
     <div className="max-w-screen-xl mx-auto flex-col text-center justify-center items-center mb-2 md:mb-10">
-      <div className="w-[300px] mt-10  flex justify-center md:my-20 my-30 md:w-[700px]">
+      <div className={changeLanguage ? "w-[300px] mt-10  flex justify-center md:mt-10 my-30 md:w-[700px]" : "w-[300px] mt-10  flex justify-center md:my-20 my-30 md:w-[700px]"}>
         <img
           className="ml-20 md:ml-0"
-          src="./src/assets/images/Metrimonititle.png"
+          src= {changeLanguage ? "./src/assets/images/Metrimonititle_Bangla-v2.png" : "./src/assets/images/Metrimonititle.png"}
         />
       </div>
 
-      <div className="mt-10 flex justify-start md:mt-20">
+      <div className="mt-10 flex justify-start md:mt-10">
         {" "}
         {/* <div className="w-[800px] items-center flex justify-center">
           <img src="/src/assets/images/hadith-bg-top.svg" alt="" />
