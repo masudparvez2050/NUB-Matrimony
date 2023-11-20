@@ -50,6 +50,13 @@ const Header = () => {
             Guide
           </Link>
           <Link
+            to="/"
+            className="hover:underline hover:font-semibold hover:text-rose-700"
+          >
+            Team
+          </Link>
+
+          <Link
             to="/about"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
@@ -150,6 +157,11 @@ const Header = () => {
               {" "}
               <Link to="/guide">Guide</Link>
             </li>
+            <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
+              {" "}
+              <Link to="/">Team</Link>
+            </li>
+
             <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               <Link to="/about">About Us</Link>
             </li>
