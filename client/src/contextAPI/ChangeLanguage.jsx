@@ -9,7 +9,7 @@ export function useLanguage() {
 }
 
 export function LanguageProvider({ children }) {
-  const [changeLanguage, setChangeLanguage] = useState(true);
+  const [changeLanguage, setChangeLanguage] = useState(false);
 
   const bn = () => {
     //setChangeLanguage((prevLanguage) => !prevLanguage);

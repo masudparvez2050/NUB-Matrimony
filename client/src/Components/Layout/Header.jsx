@@ -5,8 +5,10 @@ import { useLanguage } from "../../contextAPI/ChangeLanguage";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("English");
   const { changeLanguage, bn, en } = useLanguage();
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    changeLanguage ? "বাংলা" : "English"
+  );
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -99,10 +101,10 @@ const Header = () => {
                 <div className="py-1">
                   <a
                     href="#"
-                    onClick={() => changeLanguageBn("Bangla")}
+                    onClick={() => changeLanguageBn("বাংলা")}
                     className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
                   >
-                    Bangla
+                    বাংলা
                   </a>
                   <a
                     href="#"
