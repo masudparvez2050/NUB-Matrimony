@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../contextAPI/ChangeLanguage";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const { changeLanguage, bn, en } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,58 +16,66 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
-  const changeLanguage = (language) => {
+  const changeLanguageEn = (language) => {
     setSelectedLanguage(language);
     setIsOpen(false);
+    en();
+  };
+  const changeLanguageBn = (language) => {
+    setSelectedLanguage(language);
+    setIsOpen(false);
+    bn();
   };
 
   return (
     <header className=" p-3 max-w-screen-xl mx-auto">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img
-            src="/src/assets/images/Logo.png" // Add your logo source here
-            alt="Logo"
-            className=" h-[5rem] w-[12rem] ml-3 mt-2" // Customize the logo size
-          />
-          {/* <div className="text-white text-xl font-bold">Your Logo Name</div> */}
+          <Link to="/">
+            <img
+              src="/src/assets/images/Logo.png" // Add your logo source here
+              alt="Logo"
+              className=" h-[5rem] w-[12rem] ml-3 mt-2" // Customize the logo size
+            />
+            {/* <div className="text-white text-xl font-bold">Your Logo Name</div> */}
+          </Link>
         </div>
         <div className="hidden sm:flex space-x-6 text-lg  text-[#39182a] font-semibold">
           <Link
             to="/"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            Home
+            {changeLanguage ? "হোম" : "Home"}
           </Link>
           <Link
             to="/findpartner"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            Find Partner
+            {changeLanguage ? "সঙ্গী খুঁজুন" : "Find Partner"}
           </Link>
           <Link
             to="/guide"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            Guide
+            {changeLanguage ? "নির্দেশনা" : "Guide"}
           </Link>
           <Link
             to="/about"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            About Us
+            {changeLanguage ? "আমাদের সম্পর্কে" : "About Us"}
           </Link>
           <Link
             to="/faq"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            FAQ
+            {changeLanguage ? "জিজ্ঞাসা" : "FAQ"}
           </Link>
           <Link
             to="/contact"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            Contact
+            {changeLanguage ? "যোগাযোগ" : "Contact"}
           </Link>
         </div>
         <div className="flex items-center">
@@ -82,14 +92,14 @@ const Header = () => {
                 <div className="py-1">
                   <a
                     href="#"
-                    onClick={() => changeLanguage("Bangla")}
+                    onClick={() => changeLanguageBn("Bangla")}
                     className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
                   >
                     Bangla
                   </a>
                   <a
                     href="#"
-                    onClick={() => changeLanguage("English")}
+                    onClick={() => changeLanguageEn("English")}
                     className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
                   >
                     English

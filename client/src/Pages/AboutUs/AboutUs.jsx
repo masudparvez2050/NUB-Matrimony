@@ -1,14 +1,17 @@
-import React from "react";
 import Header from "../../Components/Layout/Header";
 import Footer from "../../Components/Layout/Footer";
+import { useLanguage } from "../../contextAPI/ChangeLanguage";
 
 function AboutUs() {
+  const { changeLanguage } = useLanguage();
   return (
     <div>
       <Header />
       <div className="bg-rose-50">
         <div className="text-4xl h-48 text-center text-white font-bold flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <h1 className="">About Us</h1>
+          <h1 className="">
+            {changeLanguage ? "আমাদের সম্পর্কে" : "About Us"}
+          </h1>
         </div>
         <div className="flex justify-center items-center text-left max-w-screen-xl mx-auto mb-15">
           <div className="m-6 px-20 text-slate-800 leading-loose text-lg">
