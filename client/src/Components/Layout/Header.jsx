@@ -124,7 +124,8 @@ const Header = () => {
             Button 1
           </button> */}
           <button className="hidden sm:flex hover:shadow-lg px-4 py-2 rounded-xl border-violet-600 text-violet-600 border-2">
-            Login
+          {changeLanguage ? "লগইন" : "Login"}
+            
           </button>
           <button className="sm:hidden" onClick={toggleMenu}>
             <svg

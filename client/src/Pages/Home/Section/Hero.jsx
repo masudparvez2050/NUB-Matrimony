@@ -1,6 +1,8 @@
 import React from "react";
+import { useLanguage } from "../../../contextAPI/ChangeLanguage";
 
 function Hero() {
+  const { changeLanguage} = useLanguage();
   return (
     <div className="max-w-screen-xl mx-auto flex-col text-center justify-center items-center mb-2 md:mb-10">
       <div className="w-[300px] mt-10  flex justify-center md:my-20 my-30 md:w-[700px]">
@@ -17,10 +19,14 @@ function Hero() {
         </div> */}
         <div className="bg-[#fccff0] mx-8 md:mx-0 rounded-3xl  p-5 border border-[#f789d2] opacity-80 flex justify-center md:justify-start md:w-[680px]">
           <p className="text-gray-900 font-semibold text-sm md:text-xl">
-            When a person gets married he has completed half of his deen, so let
-            him fear Allah with <br />
-            regard to the other half. - <br />
-            <span className="text-pink-800">(Shu’ab al-Eemaan 5486)</span>
+          {changeLanguage ? "যখন একজন ব্যক্তি বিয়ে করে তখন তার অর্ধেক দ্বীন পূর্ণ হয়। অতএব আল্লাহকে ভয় করুন।" : "When a person gets married he has completed half of his deen, so let him fear Allah with"}
+             
+            <br />
+            {changeLanguage ? "আপনার সহধর্মীনিকে সম্মান প্রদর্শন করুন।" : "regard to the other half. -"}
+             <br />
+            <span className="text-pink-800">
+            {changeLanguage ? "সূরা : আল-ইমরান, আয়াত : ৫৪৮৬" : "(Shu’ab al-Eemaan 5486)"}
+              </span>
           </p>
         </div>
       </div>
