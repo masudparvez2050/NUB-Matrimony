@@ -60,10 +60,10 @@ const Header = () => {
             {changeLanguage ? "নির্দেশনা" : "Guide"}
           </Link>
           <Link
-            to="/"
+            to="/team"
             className="hover:underline hover:font-semibold hover:text-rose-700"
           >
-            Team
+            {changeLanguage ? "টিম" : "Team"}
           </Link>
 
           <Link

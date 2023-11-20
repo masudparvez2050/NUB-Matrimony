@@ -9,6 +9,7 @@ import Guide from "./Pages/Guide/Guide";
 import Home from "./Pages/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "./contextAPI/ChangeLanguage";
+import Team from "./Pages/Team/Team";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/guide" element={<Guide />} />
+            <Route path="/team" element={<Team />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>
