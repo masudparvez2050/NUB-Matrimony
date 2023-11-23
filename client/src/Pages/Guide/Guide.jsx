@@ -130,8 +130,7 @@ function Guide() {
                 <div key={index} className="mb-2">
                   <button
                     className="w-full bg-white drop-shadow p-5 flex justify-between items-center hover:bg-gray-100 rounded-md text-left"
-                    onClick={() => handleClick(index)}
-                  >
+                    onClick={() => handleClick(index)}>
                     <span>{item.title}</span>
                     <span className="text-lg transition-all duration-500 ease-in-out">
                       {activeIndex === index ? "-" : "+"}
@@ -151,8 +150,7 @@ function Guide() {
                 <div key={index} className="mb-2">
                   <button
                     className="w-full bg-white drop-shadow p-5 flex justify-between items-center hover:bg-gray-100 rounded-md text-left"
-                    onClick={() => handleClick(index)}
-                  >
+                    onClick={() => handleClick(index)}>
                     <span>{item.title}</span>
                     <span className="text-lg transition-all duration-500 ease-in-out">
                       {activeIndex === index ? "-" : "+"}

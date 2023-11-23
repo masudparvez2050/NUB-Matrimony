@@ -7,7 +7,7 @@ function Team() {
     <>
       <Header />
       <div>
-        <div className="p-20 bg-[#a1b9d9]">
+        <div className="bg-[#ff0081] p-10 md:p-20 ">
           <h1 className="text-center font-bold text-6xl text-white hover:text-7xl transition-all duration-700">
             Our Team Member
           </h1>
@@ -18,13 +18,13 @@ function Team() {
         </div>
 
         {/* Team Card */}
-        <div className="bg-fixed ... py-5 text-center bg-[url('img/pattern.jpg')]">
-          <div className="flex justify-center mt-10 mb-10">
-            <div className="border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
+        <div className="bg-fixed ... py-5 text-center">
+          <div className="flex flex-wrap justify-center mt-10 mb-10">
+            <div className="mb-5 border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
               <div className="flex justify-center md:w-[150px] mt-4 m-auto">
                 <img
                   className="border-2 rounded-full hover:shadow-xl hover:shadow-purple-300 transition-all duration-500"
-                  src="img/Masud.jpg"
+                  src="/src/assets/images/Masud.jpg"
                   alt="error"
                 />
               </div>
@@ -47,16 +47,14 @@ function Team() {
                 {/* <!-- Facebook Icon --> */}
                 <Link
                   to="https://www.facebook.com/yourusername"
-                  title="Facebook"
-                >
+                  title="Facebook">
                   <i className="fab fa-facebook"></i>
                 </Link>
 
                 {/* <!-- LinkedIn Icon --> */}
                 <Link
                   to="https://www.linkedin.com/in/yourusername"
-                  title="LinkedIn"
-                >
+                  title="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </Link>
 
@@ -72,11 +70,11 @@ function Team() {
               </div>
             </div>
 
-            <div className="border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
+            <div className="mb-5 border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
               <div className="flex justify-center md:w-[150px] mt-4 m-auto">
                 <img
                   className="border-2 rounded-full hover:shadow-xl hover:shadow-purple-300 transition-all duration-500"
-                  src="img/Helal.jpg"
+                  src="/src/assets/images/Helal.jpg"
                   alt="error"
                 />
               </div>
@@ -99,16 +97,14 @@ function Team() {
                 {/* <!-- Facebook Icon --> */}
                 <a
                   href="https://www.facebook.com/yourusername"
-                  title="Facebook"
-                >
+                  title="Facebook">
                   <i className="fab fa-facebook"></i>
                 </a>
 
                 {/* <!-- LinkedIn Icon --> */}
                 <a
                   href="https://www.linkedin.com/in/yourusername"
-                  title="LinkedIn"
-                >
+                  title="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </a>
 
@@ -128,7 +124,7 @@ function Team() {
               <div className="flex justify-center md:w-[150px] mt-4 m-auto">
                 <img
                   className="border-2 rounded-full hover:shadow-xl hover:shadow-purple-300 transition-all duration-500"
-                  src="img/00.jpg"
+                  src="/src/assets/images/00.jpg"
                   alt="error"
                 />
               </div>
@@ -151,16 +147,14 @@ function Team() {
                 {/* <!-- Facebook Icon --> */}
                 <a
                   href="https://www.facebook.com/yourusername"
-                  title="Facebook"
-                >
+                  title="Facebook">
                   <i className="fab fa-facebook"></i>
                 </a>
 
                 {/* <!-- LinkedIn Icon --> */}
                 <a
                   href="https://www.linkedin.com/in/yourusername"
-                  title="LinkedIn"
-                >
+                  title="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </a>
 
@@ -177,12 +171,12 @@ function Team() {
             </div>
           </div>
 
-          <div className="flex justify-center mt-10 mb-10">
-            <div className="border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
+          <div className="flex flex-wrap justify-center mt-10 mb-10">
+            <div className="mb-5 border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
               <div className="flex justify-center md:w-[150px] mt-4 m-auto">
                 <img
                   className="border-2 rounded-full hover:shadow-xl hover:shadow-purple-300 transition-all duration-500"
-                  src="img/Taslim.jpg"
+                  src="/src/assets/images/Taslim.jpg"
                   alt="error"
                 />
               </div>
@@ -204,16 +198,14 @@ function Team() {
                 {/* <!-- Facebook Icon --> */}
                 <a
                   href="https://www.facebook.com/yourusername"
-                  title="Facebook"
-                >
+                  title="Facebook">
                   <i className="fab fa-facebook"></i>
                 </a>
 
                 {/* <!-- LinkedIn Icon --> */}
                 <a
                   href="https://www.linkedin.com/in/yourusername"
-                  title="LinkedIn"
-                >
+                  title="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </a>
 
@@ -233,7 +225,7 @@ function Team() {
               <div className="flex justify-center md:w-[150px] mt-4 m-auto">
                 <img
                   className="border-2 rounded-full hover:shadow-xl hover:shadow-purple-300 transition-all duration-500"
-                  src="img/Asif.jpg"
+                  src="/src/assets/images/Asif.jpg"
                   alt="error"
                 />
               </div>
@@ -255,16 +247,14 @@ function Team() {
                 {/* <!-- Facebook Icon --> */}
                 <a
                   href="https://www.facebook.com/yourusername"
-                  title="Facebook"
-                >
+                  title="Facebook">
                   <i className="fab fa-facebook"></i>
                 </a>
 
                 {/* <!-- LinkedIn Icon --> */}
                 <a
                   href="https://www.linkedin.com/in/yourusername"
-                  title="LinkedIn"
-                >
+                  title="LinkedIn">
                   <i className="fab fa-linkedin"></i>
                 </a>
 
