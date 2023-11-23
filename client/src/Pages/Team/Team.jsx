@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../../Components/Layout/Footer";
 import Header from "../../Components/Layout/Header";
 
@@ -17,9 +18,7 @@ function Team() {
         </div>
 
         {/* Team Card */}
-        <div
-          className="bg-fixed ... py-5 text-center"
-          style="background-image: url(img/pattern.jpg)">
+        <div className="bg-fixed ... py-5 text-center bg-[url('img/pattern.jpg')]">
           <div className="flex justify-center mt-10 mb-10">
             <div className="border md:w-[250px] mx-3 p-3 rounded-md shadow hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-white">
               <div className="flex justify-center md:w-[150px] mt-4 m-auto">
@@ -41,44 +40,35 @@ function Team() {
               </p>
               <div className="social-icons flex justify-around mt-5 mx-8">
                 {/* <!-- Website Icon --> */}
-                {/* <a
-                  href="https://www.yourwebsite.com"
-                  target="_blank"
-                  title="Website">
+                <Link to="https://www.yourwebsite.com" title="Website">
                   <i className="fas fa-globe"></i>
-                </a> */}
+                </Link>
 
                 {/* <!-- Facebook Icon --> */}
-                {/* <a
-                  href="https://www.facebook.com/yourusername"
-                  target="_blank"
-                  title="Facebook">
+                <Link
+                  to="https://www.facebook.com/yourusername"
+                  title="Facebook"
+                >
                   <i className="fab fa-facebook"></i>
-                </a> */}
+                </Link>
 
                 {/* <!-- LinkedIn Icon --> */}
-                {/* <a
-                  href="https://www.linkedin.com/in/yourusername"
-                  target="_blank"
-                  title="LinkedIn">
+                <Link
+                  to="https://www.linkedin.com/in/yourusername"
+                  title="LinkedIn"
+                >
                   <i className="fab fa-linkedin"></i>
-                </a> */}
+                </Link>
 
                 {/* <!-- GitHub Icon --> */}
-                {/* <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  title="GitHub">
+                <Link to="https://github.com/yourusername" title="GitHub">
                   <i className="fab fa-github"></i>
-                </a> */}
+                </Link>
 
                 {/* <!-- Youtube Icon --> */}
-                {/* <a
-                  href="https://youtube.com/yourusername"
-                  target="_blank"
-                  title="Youtube">
+                <Link to="https://youtube.com/yourusername" title="Youtube">
                   <i className="fab fa-youtube"></i>
-                </a> */}
+                </Link>
               </div>
             </div>
 
@@ -102,44 +92,35 @@ function Team() {
               </p>
               <div className="social-icons flex justify-around mt-5 mx-8">
                 {/* <!-- Website Icon --> */}
-                {/* <a
-                  href="https://www.yourwebsite.com"
-                  target="_blank"
-                  title="Website">
+                <a href="https://www.yourwebsite.com" title="Website">
                   <i className="fas fa-globe"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Facebook Icon --> */}
-                {/* <a
+                <a
                   href="https://www.facebook.com/yourusername"
-                  target="_blank"
-                  title="Facebook">
+                  title="Facebook"
+                >
                   <i className="fab fa-facebook"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- LinkedIn Icon --> */}
-                {/* <a
+                <a
                   href="https://www.linkedin.com/in/yourusername"
-                  target="_blank"
-                  title="LinkedIn">
+                  title="LinkedIn"
+                >
                   <i className="fab fa-linkedin"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- GitHub Icon --> */}
-                {/* <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  title="GitHub">
+                <a href="https://github.com/yourusername" title="GitHub">
                   <i className="fab fa-github"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Youtube Icon --> */}
-                {/* <a
-                  href="https://youtube.com/yourusername"
-                  target="_blank"
-                  title="Youtube">
+                <a href="https://youtube.com/yourusername" title="Youtube">
                   <i className="fab fa-youtube"></i>
-                </a> */}
+                </a>
               </div>
             </div>
 
@@ -163,44 +144,35 @@ function Team() {
               </p>
               <div className="social-icons flex justify-around mt-5 mx-8">
                 {/* <!-- Website Icon --> */}
-                {/* <a
-                  href="https://www.yourwebsite.com"
-                  target="_blank"
-                  title="Website">
+                <a href="https://www.yourwebsite.com" title="Website">
                   <i className="fas fa-globe"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Facebook Icon --> */}
-                {/* <a
+                <a
                   href="https://www.facebook.com/yourusername"
-                  target="_blank"
-                  title="Facebook">
+                  title="Facebook"
+                >
                   <i className="fab fa-facebook"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- LinkedIn Icon --> */}
-                {/* <a
+                <a
                   href="https://www.linkedin.com/in/yourusername"
-                  target="_blank"
-                  title="LinkedIn">
+                  title="LinkedIn"
+                >
                   <i className="fab fa-linkedin"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- GitHub Icon --> */}
-                {/* <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  title="GitHub">
+                <a href="https://github.com/yourusername" title="GitHub">
                   <i className="fab fa-github"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Youtube Icon --> */}
-                {/* <a
-                  href="https://youtube.com/yourusername"
-                  target="_blank"
-                  title="Youtube">
+                <a href="https://youtube.com/yourusername" title="Youtube">
                   <i className="fab fa-youtube"></i>
-                </a> */}
+                </a>
               </div>
             </div>
           </div>
@@ -225,44 +197,35 @@ function Team() {
               </p>
               <div className="social-icons flex justify-around mt-5 mx-8">
                 {/* <!-- Website Icon --> */}
-                {/* <a
-                  href="https://www.yourwebsite.com"
-                  target="_blank"
-                  title="Website">
+                <a href="https://www.yourwebsite.com" title="Website">
                   <i className="fas fa-globe"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Facebook Icon --> */}
-                {/* <a
+                <a
                   href="https://www.facebook.com/yourusername"
-                  target="_blank"
-                  title="Facebook">
+                  title="Facebook"
+                >
                   <i className="fab fa-facebook"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- LinkedIn Icon --> */}
-                {/* <a
+                <a
                   href="https://www.linkedin.com/in/yourusername"
-                  target="_blank"
-                  title="LinkedIn">
+                  title="LinkedIn"
+                >
                   <i className="fab fa-linkedin"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- GitHub Icon --> */}
-                {/* <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  title="GitHub">
+                <a href="https://github.com/yourusername" title="GitHub">
                   <i className="fab fa-github"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Youtube Icon --> */}
-                {/* <a
-                  href="https://youtube.com/yourusername"
-                  target="_blank"
-                  title="Youtube">
+                <a href="https://youtube.com/yourusername" title="Youtube">
                   <i className="fab fa-youtube"></i>
-                </a> */}
+                </a>
               </div>
             </div>
 
@@ -285,44 +248,35 @@ function Team() {
               </p>
               <div className="social-icons flex justify-around mt-5 mx-8">
                 {/* <!-- Website Icon --> */}
-                {/* <a
-                  href="https://www.yourwebsite.com"
-                  target="_blank"
-                  title="Website">
+                <a href="https://www.yourwebsite.com" title="Website">
                   <i className="fas fa-globe"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Facebook Icon --> */}
-                {/* <a
+                <a
                   href="https://www.facebook.com/yourusername"
-                  target="_blank"
-                  title="Facebook">
+                  title="Facebook"
+                >
                   <i className="fab fa-facebook"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- LinkedIn Icon --> */}
-                {/* <a
+                <a
                   href="https://www.linkedin.com/in/yourusername"
-                  target="_blank"
-                  title="LinkedIn">
+                  title="LinkedIn"
+                >
                   <i className="fab fa-linkedin"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- GitHub Icon --> */}
-                {/* <a
-                  href="https://github.com/yourusername"
-                  target="_blank"
-                  title="GitHub">
+                <a href="https://github.com/yourusername" title="GitHub">
                   <i className="fab fa-github"></i>
-                </a> */}
+                </a>
 
                 {/* <!-- Youtube Icon --> */}
-                {/* <a
-                  href="https://youtube.com/yourusername"
-                  target="_blank"
-                  title="Youtube">
+                <a href="https://youtube.com/yourusername" title="Youtube">
                   <i className="fab fa-youtube"></i>
-                </a> */}
+                </a>
               </div>
             </div>
           </div>
