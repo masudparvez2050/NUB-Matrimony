@@ -10,6 +10,9 @@ import Home from "./Pages/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "./contextAPI/ChangeLanguage";
 import Team from "./Pages/Team/Team";
+import Login from "./Pages/Authentication/Login";
+import Registration from "./Pages/Authentication/Registration";
+import ResetPassword from "./Pages/Authentication/ResetPassword";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/guide" element={<Guide />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/reset" element={<ResetPassword />} />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>
