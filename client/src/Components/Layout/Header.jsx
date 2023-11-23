@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className=" p-3 max-w-screen-xl mx-auto">
+    <header className=" p-3 max-w-screen-xl mx-auto drop ">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/">
@@ -123,10 +123,12 @@ const Header = () => {
           {/* <button className="hidden sm:flex   hover:bg-blue-100 px-4 py-2 rounded-full  border-gray-500 border">
             Button 1
           </button> */}
-          <button className="hidden sm:flex hover:shadow-lg px-4 py-2 rounded-xl border-violet-600 text-violet-600 border-2">
-          {changeLanguage ? "লগইন" : "Login"}
-            
-          </button>
+          <Link
+            to="/login "
+            className="hidden sm:flex hover:shadow-lg px-4 py-2 rounded-xl border-violet-600 text-violet-600 border-2"
+          >
+            {changeLanguage ? "লগইন" : "Login"}
+          </Link>
           <button className="sm:hidden" onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
