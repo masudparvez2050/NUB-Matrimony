@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link to="/">
             <img
-              src="/src/assets/images/Logo.png" // Add your logo source here
+              src= {changeLanguage ? "/src/assets/images/Metrimonititle_Bangla-v2.png" : "/src/assets/images/Logo.png"}  // Add your logo source here
               alt="Logo"
               className=" h-[5rem] w-[12rem] ml-3 mt-2" // Customize the logo size
             />
