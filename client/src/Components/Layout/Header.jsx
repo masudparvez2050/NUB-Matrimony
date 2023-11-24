@@ -35,7 +35,11 @@ const Header = () => {
         <div className="flex items-center">
           <Link to="/">
             <img
-              src= {changeLanguage ? "/src/assets/images/Metrimonititle_Bangla-v2.png" : "/src/assets/images/Logo.png"}  // Add your logo source here
+              src={
+                changeLanguage
+                  ? "/src/assets/images/Metrimonititle_Bangla-v2.png"
+                  : "/src/assets/images/Logo.png"
+              } // Add your logo source here
               alt="Logo"
               className=" h-[5rem] w-[12rem] ml-3 mt-2" // Customize the logo size
             />
@@ -45,45 +49,38 @@ const Header = () => {
         <div className="hidden sm:flex space-x-6 text-lg  text-[#39182a] font-semibold">
           <Link
             to="/"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "হোম" : "Home"}
           </Link>
           <Link
             to="/findpartner"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "সঙ্গী খুঁজুন" : "Find Partner"}
           </Link>
           <Link
             to="/guide"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "নির্দেশনা" : "Guide"}
           </Link>
           <Link
             to="/team"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "টিম" : "Team"}
           </Link>
 
           <Link
             to="/about"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "আমাদের সম্পর্কে" : "About Us"}
           </Link>
           <Link
             to="/faq"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "জিজ্ঞাসা" : "FAQ"}
           </Link>
           <Link
             to="/contact"
-            className="hover:underline hover:font-semibold hover:text-rose-700"
-          >
+            className="hover:underline hover:font-semibold hover:text-rose-700">
             {changeLanguage ? "যোগাযোগ" : "Contact"}
           </Link>
         </div>
@@ -92,8 +89,7 @@ const Header = () => {
           <div className="relative inline-block text-left mr-2">
             <button
               onClick={toggleDropdown}
-              className="p-2  rounded-lg hover:bg-pink-400 hover:text-white "
-            >
+              className="p-2  rounded-lg hover:bg-pink-400 hover:text-white ">
               {selectedLanguage}
             </button>
             {isOpen && (
@@ -102,15 +98,13 @@ const Header = () => {
                   <a
                     href="#"
                     onClick={() => changeLanguageBn("বাংলা")}
-                    className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
-                  >
+                    className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold">
                     বাংলা
                   </a>
                   <a
                     href="#"
                     onClick={() => changeLanguageEn("English")}
-                    className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold"
-                  >
+                    className="block px-4 py-2 text-gray-800 hover:bg-rose-500 hover:text-white hover:font-bold">
                     English
                   </a>
                 </div>
@@ -125,8 +119,7 @@ const Header = () => {
           </button> */}
           <Link
             to="/login "
-            className="hidden sm:flex hover:shadow-lg px-4 py-2 rounded-xl border-violet-600 text-violet-600 border-2"
-          >
+            className="hidden sm:flex hover:shadow-lg px-4 py-2 rounded-xl border-violet-600 text-violet-600 border-2">
             {changeLanguage ? "লগইন" : "Login"}
           </Link>
           <button className="sm:hidden" onClick={toggleMenu}>
@@ -135,8 +128,7 @@ const Header = () => {
               className="h-6 w-6 text-black cursor-pointer"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+              stroke="currentColor">
               {isMenuOpen ? (
                 <path
                   strokeLinecap="round"
