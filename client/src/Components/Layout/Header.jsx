@@ -166,7 +166,7 @@ const Header = () => {
             </li>
             <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
               {" "}
-              <Link to="/">Team</Link>
+              <Link to="/team">Team</Link>
             </li>
 
             <li className="hover:bg-rose-600 hover:text-white hover:rounded-md p-2 pr-4">
