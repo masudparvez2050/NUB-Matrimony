@@ -100,7 +100,7 @@ function Registration() {
               />
 
               <center>
-                <button className="py-2 px-8 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-pink-300 text-md my-4">
+                <button className="py-2 px-8 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-purple-300 hover:shadow-lg hover:bg-pink-600 transition-all duration-500text-md my-4">
                   {changeLanguage ? "রেজিস্ট্রেশন" : "Registration"}
                 </button>
               </center>

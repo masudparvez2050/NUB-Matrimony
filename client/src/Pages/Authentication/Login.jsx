@@ -42,7 +42,7 @@ function Login() {
               >
                 {/* <!-- <center> --> */}
                 <img
-                  className="w-24 h-24 mx-auto"
+                  className="w-24 h-24 mx-auto mb-4"
                   src="/src/assets/images/ring.jpg"
                   alt=""
                 />
@@ -55,7 +55,7 @@ function Login() {
                 </p>
 
                 <input
-                  className="border font-extralight rounded-md bg-gray-100 h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                  className="border font-extralight rounded-md h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                   placeholder={changeLanguage ? "ই-মেইল এড্রেস" : "Enter Email"}
                   required
                   type="text"
@@ -63,7 +63,7 @@ function Login() {
                 />
 
                 <input
-                  className="border font-extralight rounded-md bg-gray-100 h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                  className="border font-extralight rounded-md h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                   placeholder={changeLanguage ? "পাসওয়ার্ড" : "Enter password"}
                   required
                   type="password"
@@ -74,14 +74,11 @@ function Login() {
                 <div className="flex justify-between">
                   <div>
                     <input className="my-4" type="checkbox" name="checkbox" />
-                    <label className="font-semibold my-4 mx-2 text-gray-600">
-                      {changeLanguage ? "লগইন থাকুন" : "Keep me login"}
+                    <label className=" my-4 mx-2 text-sm text-gray-500">
+                      {changeLanguage ? "লগইন থাকুন" : "Rememder me"}
                     </label>
                   </div>
-                  <Link
-                    className="font-semibold my-3 text-rose-500 "
-                    to="/reset"
-                  >
+                  <Link className=" text-sm my-3 text-rose-500 " to="/reset">
                     {changeLanguage
                       ? "পাসওয়ার্ড ভুলে গিয়েছেন?"
                       : "Forget password?"}
@@ -90,7 +87,7 @@ function Login() {
                 {/* <!--end- keep login and forget password -->   */}
                 <div className="flex justify-center">
                   <button
-                    className="my-4 py-2 px-10 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-blue-300"
+                    className="my-4 py-2 px-10 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-purple-300 hover:shadow-lg hover:bg-pink-600 transition-all duration-500"
                     type="Submit"
                   >
                     {changeLanguage ? "লগইন" : "Log in"}
