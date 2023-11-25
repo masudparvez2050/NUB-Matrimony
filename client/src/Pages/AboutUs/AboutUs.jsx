@@ -1,13 +1,158 @@
 import Header from "../../Components/Layout/Header";
 import Footer from "../../Components/Layout/Footer";
 import { useLanguage } from "../../contextAPI/ChangeLanguage";
+import { Link } from "react-router-dom";
 
 function AboutUs() {
   const { changeLanguage } = useLanguage();
   return (
     <div>
       <Header />
-      <div className="bg-rose-50">
+      <section className="overflow-auto justify-center text-gray-600 ">
+        <div className=" container px-5 pt-24 pb-10 mx-auto ">
+          <div className="flex flex-col text-center w-full mb-2">
+            <h1 className="lg:text-6xl lg:font-bold sm:text-4xl text-3xl font-medium title-font mb-4 text-gray-900 drop-shadow-md">
+              <span className="text-green-600">
+                {changeLanguage ? "আমাদের" : "Our"}
+              </span>{" "}
+              <span className="text-blue-500">
+                {changeLanguage ? "পরিষেবা সমূহ" : "Services"}
+              </span>
+            </h1>
+          </div>
+          <div className="flex justify-center items-center text-center h-full m-5 p-5">
+            <img src="/img/10782537-19198414-1.png" alt="" />
+          </div>
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="sm:w-16 sm:h-16 w-10 h-10"
+                src="/img/vector-2.svg"
+                alt=""
+              />
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className=" text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage
+                  ? "পবিত্র কুরআন শিক্ষা কার্যক্রম"
+                  : "Holy Quran Education Program"}
+              </h2>
+              <p className="leading-relaxed text-lg">
+                {changeLanguage
+                  ? "আল হুদা একাডেমীর প্রধান কার্যক্রম হচ্ছে পবিত্র কুরআন শিক্ষা কার্যক্রম । আমাদের আছে দক্ষ হাফেয ও আলেম যাদের মাধ্যমে আপনি খুব সহজে সহি পারবেন।।"
+                  : "The main activity of Al Huda Academy is Holy Quran education program. We have skilled hafiz and scholars through whom you can easily cope."}{" "}
+              </p>
+              <Link
+                className="mt-3 text-green-500 inline-flex items-center text-xl"
+                to="/services"
+              >
+                {changeLanguage ? "বিস্তারিত" : "Details"}
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage
+                  ? "প্রয়োজনীয় ইসলামিক আকিদা শিক্ষা কার্যক্রম"
+                  : "Essential Islamic Aqeedah Education Program"}
+              </h2>
+              <p className="leading-relaxed text-xl">
+                {changeLanguage
+                  ? "প্রয়োজনীয় ইসলামিক আকিদা শিক্ষা কার্যক্রমের মাধ্যমে কুরআন হাদিসের বেসিক আকিদা সমূহ, প্রয়োজনীয় সুরা শেখানো হয়।"
+                  : "Essential Islamic Aqeedah Education Program teaches the basic Aqeedahs of the Qur'anic Hadith, essential Surahs."}{" "}
+              </p>
+              <Link
+                className="mt-3 text-green-500 inline-flex items-center text-lg"
+                to="/services"
+              >
+                {changeLanguage ? "বিস্তারিত" : "Details"}
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+            <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="sm:w-16 sm:h-16 w-10 h-10"
+                src="/img/vector-1.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="sm:w-16 sm:h-16 w-10 h-10"
+                src="/img/vector.svg"
+                alt=""
+              />
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage ? "গৃহশিক্ষক পরিষেবা" : "Tutoring Services"}
+              </h2>
+              <p className="leading-relaxed text-xl">
+                {changeLanguage
+                  ? "আল হুদা একাডেমী দিচ্ছে আপনাদের অনলাইন ও অফলাইন গৃহশিক্ষক পরিষেবা। আমাদের কাছে আছে দক্ষ ও বিশ্বস্ত শিক্ষক। এখন আপনি খুব সহজেই আপনার নিকতস্থ জেলা বা এলাকার শিক্ষক পেয়ে যান ঘরে বসেই।"
+                  : "Al Huda Academy offers you online and offline tutoring services. We have competent and reliable teachers. Now you can easily find the teacher of your nearest district or area at home."}
+              </p>
+              <Link
+                className="mt-3 text-green-500 inline-flex items-center text-lg"
+                to="/services"
+              >
+                {changeLanguage ? "বিস্তারিত" : "Details"}
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  className="w-4 h-4 ml-2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
+          <div className=" flex text-center justify-center ">
+            <button className="mb-2 bg-green-800 w-auto text-white m-10 py-2 px-5 text-xl">
+              <Link to="/services">
+                {changeLanguage ? "আরও দেখুন" : "More"}
+              </Link>
+            </button>
+          </div>
+        </div>
+        <div className="relative z-[-1]">
+          <img
+            className="absolute bottom-0 w-full text-center"
+            alt="Wave"
+            src="/img/wave-1-1.png"
+          />
+        </div>
+      </section>
+
+      {/* <div className="bg-rose-50">
         <div className="text-4xl h-48 text-center text-white font-bold flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           <h1 className="">
             {changeLanguage ? "আমাদের সম্পর্কে" : "About Us"}
@@ -55,7 +200,7 @@ function AboutUs() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );
