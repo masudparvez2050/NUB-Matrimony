@@ -11,7 +11,7 @@ function Login() {
         <div className="shadow-md">
           <Header />
         </div>
-        <div className="flex h-auto p-12 justify-center items-center">
+        <div className="flex h-auto p-12 justify-center items-center transition-all duration-500">
           {/* <!-- Start Left Section --> */}
           <div className="w-1/2 bg-white flex justify-center">
             <div className="md:w-[405px] text-center">
@@ -35,28 +35,36 @@ function Login() {
           <!-- Start Right Section --> */}
           <div className="w-1/2 bg-white-300">
             <form className="flex justify-center">
-              <div className="m-10 p-10 border rounded-2xl shadow md:w-[400px] hover:shadow-purple-300 hover:shadow-lg transition-all duration-500 bg-pink">
+              <div
+                className="m-10 p-10 border rounded-2xl md:w-[400px] shadow-purple-300 shadow-lg
+              hover:shadow-purple-400 hover:shadow-xl  
+              transition-all duration-500 bg-pink"
+              >
                 {/* <!-- <center> --> */}
                 <img
-                  className="w-24 h-24 mx-auto rounded-full"
-                  src="/src/assets/images/Male.png"
+                  className="w-24 h-24 mx-auto"
+                  src="/src/assets/images/ring.jpg"
                   alt=""
                 />
                 {/* <!-- </center> --> */}
-                <p className="text-center font-bold text-xl mb-2">Login</p>
-                <p className="text-center font-semibold mb-3">Welcome Back</p>
+                <p className="text-center font-bold text-xl mb-2">
+                  {changeLanguage ? "লগইন" : "Login"}
+                </p>
+                <p className="text-center font-semibold text-gray-600 mb-3">
+                  {changeLanguage ? "স্বাগতম" : "Welcome Back"}
+                </p>
 
                 <input
-                  className="border rounded-md bg-gray-100 h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                  placeholder="Enter Email"
+                  className="border font-extralight rounded-md bg-gray-100 h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                  placeholder={changeLanguage ? "ই-মেইল এড্রেস" : "Enter Email"}
                   required
                   type="text"
                   name="username"
                 />
 
                 <input
-                  className="border rounded-md bg-gray-100 h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                  placeholder="Enter password"
+                  className="border font-extralight rounded-md bg-gray-100 h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                  placeholder={changeLanguage ? "পাসওয়ার্ড" : "Enter password"}
                   required
                   type="password"
                   name="password"
@@ -67,31 +75,37 @@ function Login() {
                   <div>
                     <input className="my-4" type="checkbox" name="checkbox" />
                     <label className="font-semibold my-4 mx-2 text-gray-600">
-                      Keep me login
+                      {changeLanguage ? "লগইন থাকুন" : "Keep me login"}
                     </label>
                   </div>
                   <Link
-                    className="font-semibold my-3 text-gray-600 "
-                    to="/reset">
-                    Forget password
+                    className="font-semibold my-3 text-rose-500 "
+                    to="/reset"
+                  >
+                    {changeLanguage
+                      ? "পাসওয়ার্ড ভুলে গিয়েছেন?"
+                      : "Forget password?"}
                   </Link>
                 </div>
                 {/* <!--end- keep login and forget password -->   */}
                 <div className="flex justify-center">
                   <button
-                    className="my-2 py-2 px-10 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-blue-300"
-                    type="Submit">
-                    Log in
+                    className="my-4 py-2 px-10 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-blue-300"
+                    type="Submit"
+                  >
+                    {changeLanguage ? "লগইন" : "Log in"}
                   </button>
                 </div>
                 <center>
                   <label className="text-sm text-gray-600">
-                    don&apos;t have account? &nbsp;
+                    {changeLanguage ? "একাউন্ট নেই?" : "Don't have account? "}
+                    &nbsp;
                   </label>
                   <Link
                     to="/registration"
-                    className="rounder-md font-semibold text-sm text-blue-800">
-                    Click Here
+                    className="rounder-md font-semibold text-sm text-blue-800"
+                  >
+                    {changeLanguage ? "এখানে ক্লিক করুন" : "Click Here"}
                   </Link>
                 </center>
               </div>

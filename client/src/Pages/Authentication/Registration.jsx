@@ -35,14 +35,16 @@ function Registration() {
             <!-- Start Right Section --> */}
         <div className="w-1/2 bg-white-300">
           <form className="flex justify-center">
-            <div className="m-10 p-10 border rounded-md shadow w-full md:w-[450px] hover:shadow-pink-300 hover:shadow-lg transition-all duration-500 bg-white">
-              <p className="font-bold text-center text-xl mb-3">Registration</p>
+            <div className="m-10 p-10 border rounded-md w-full md:w-[450px] shadow-purple-300 shadow-lg hover:shadow-purple-400 hover:shadow-xl transition-all duration-500 bg-white">
+              <p className="font-bold text-center text-xl mb-3">
+                {changeLanguage ? "রেজিস্ট্রেশন" : "Registration"}
+              </p>
 
               <input
                 className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                 type="text"
                 name="username"
-                placeholder="Please input your username"
+                placeholder={changeLanguage ? "ইউজারনেম" : "Username"}
                 required
               />
 
@@ -50,7 +52,7 @@ function Registration() {
                 className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                 type="password"
                 name="password"
-                placeholder="Please input you password"
+                placeholder={changeLanguage ? "পাসওয়ার্ড" : "Password"}
                 required
               />
 
@@ -58,7 +60,7 @@ function Registration() {
                 className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                 type="text"
                 name="email"
-                placeholder="Please input you email address"
+                placeholder={changeLanguage ? "ই-মেইল এড্রেস" : "Email address"}
                 required
               />
 
@@ -66,23 +68,32 @@ function Registration() {
                 className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                 type="number"
                 name="mobile-number"
-                placeholder="Please input your mobile number"
+                placeholder={
+                  changeLanguage ? "মোবাইল নাম্বার" : "Mobile number"
+                }
                 required
               />
 
               <select
-                className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200 text-gray-400"
                 type="number"
-                name="Gender">
-                <option value="" disabled>
-                  Select your gender
+                name="Gender"
+              >
+                <option value>
+                  {changeLanguage
+                    ? "জেন্ডার নির্বাচন করুন"
+                    : "Select your gender"}
                 </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="Male">
+                  {changeLanguage ? "পুরুষ" : "Male"}
+                </option>
+                <option value="Female">
+                  {changeLanguage ? "মহিলা" : "Female"}
+                </option>
               </select>
 
               <input
-                className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200 text-gray-400"
                 type="date"
                 name="date-of-birth"
                 required
@@ -90,19 +101,20 @@ function Registration() {
 
               <center>
                 <button className="py-2 px-8 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-pink-300 text-md my-4">
-                  Registration
+                  {changeLanguage ? "রেজিস্ট্রেশন" : "Registration"}
                 </button>
               </center>
 
               <center>
                 <label className="font-sm text-sm text-gray-500 mx-2">
-                  Have an account ?
+                  {changeLanguage ? "একাউন্ট আছে?" : "Have an account ?"}
                 </label>
 
                 <Link
-                  className="rounder-md font-sm text-sm text-blue-800"
-                  to="/login">
-                  Sign in
+                  className="rounder-md font-bold text-sm text-blue-800"
+                  to="/login"
+                >
+                  {changeLanguage ? "সাইন ইন করুন" : "Sign in"}
                 </Link>
               </center>
             </div>
