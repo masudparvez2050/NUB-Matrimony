@@ -9,198 +9,125 @@ function AboutUs() {
     <div>
       <Header />
       <section className="overflow-auto justify-center text-gray-600 ">
-        <div className=" container px-5 pt-24 pb-10 mx-auto ">
-          <div className="flex flex-col text-center w-full mb-2">
+        <div className=" container px-5 pt-1 pb-10 mx-auto ">
+          <div className="flex flex-col text-center w-full mb-2 mt-6">
             <h1 className="lg:text-6xl lg:font-bold sm:text-4xl text-3xl font-medium title-font mb-4 text-gray-900 drop-shadow-md">
               <span className="text-green-600">
-                {changeLanguage ? "আমাদের" : "Our"}
+                {changeLanguage ? "আমাদের" : "About"}
               </span>{" "}
               <span className="text-blue-500">
-                {changeLanguage ? "পরিষেবা সমূহ" : "Services"}
+                {changeLanguage ? "সম্পর্কে" : "Us"}
               </span>
             </h1>
           </div>
+
           <div className="flex justify-center items-center text-center h-full m-5 p-5">
-            <img src="/img/10782537-19198414-1.png" alt="" />
+            <img src="/src/assets/images/Banner.png" alt="" />
+          </div>
+
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="rounded-full border w-44 md:w-96"
+                src="/src/assets/images/Helal.jpg"
+                alt=""
+              />
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className=" text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage ? "হেলাল খান" : "Helal Khan"}
+              </h2>
+              <p className="leading-relaxed text-lg">
+                {changeLanguage
+                  ? "হেলাল খান এই প্রজেক্টের টিম লিডার এবং ফ্রন্টএন্ড ডেভেলপার (ReactJS)। এই প্রজেক্টে তিনি টিম ম্যানেজমেন্ট, ওয়ার্ক ম্যানেজমেন্টসহ সকল কাজে সহায়তা করছেন।"
+                  : "Helal Khan is the team leader and frontend developer (ReactJS). Of this project he is assisting in all tasks including team management in this project."}{" "}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage ? "মাসুদুর রহমান" : "Masudur Rahman"}
+              </h2>
+              <p className="leading-relaxed text-xl">
+                {changeLanguage
+                  ? "মাসুদুর রহমান সহকারী টিম লিডার ও ব্যাকএন্ড এই প্রকল্পের জন্য বিকাশকারী (নোডজেএস)। সে সব ব্যাকএন্ড করছে এবং এই প্রকল্পে ডাটাবেস কাজ."
+                  : "Masudur Rahman is the Assistant Team Leader and Backend Developer (NodeJS) for this project. He is doing all the backend and database work on this project."}{" "}
+              </p>
+            </div>
+            <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="rounded-full border w-44 md:w-96"
+                src="/src/assets/images/Masud.jpg"
+                alt=""
+              />
+            </div>
           </div>
           <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
               <img
-                className="sm:w-16 sm:h-16 w-10 h-10"
-                src="/img/vector-2.svg"
+                className="rounded-full border w-44 md:w-96"
+                src="/src/assets/images/00.jpg"
+                alt=""
+              />
+            </div>
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage ? "জান্নাতুন নাইম" : "Jannatun Naim"}
+              </h2>
+              <p className="leading-relaxed text-xl">
+                {changeLanguage
+                  ? "জান্নাতুন নাইম এই প্রজেক্টের ফ্রন্ট এন্ড ডিজাইনার। তিনি এই প্রজেক্টে HTML, CSS এর সব কাজ করছেন। তিনি এই প্রকল্পে HTML স্ট্রাকচার তৈরি করেন।"
+                  : "Jannatun Naim is the frontend designer of this project. He is doing all of the HTML, CSS work in this project. He Create HTML Structure on this project."}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
+                {changeLanguage ? "মোঃ তসলিম উদ্দিন" : "Md. Taslim Uddin"}
+              </h2>
+              <p className="leading-relaxed text-xl">
+                {changeLanguage
+                  ? "তসলিম উদ্দিন আমাদের ইউএক্স/ইউআই বিশেষজ্ঞ। তিনি এই প্রজেক্টে HTML, CSS এর যাবতীয় কাজ করছেন। বিশেষভাবে লগইন এবং নিবন্ধন পৃষ্ঠা এবং সমগ্র ওয়েবসাইটের জন্য সমস্ত আইকন, লোগো ডিজাইনের কাজ করেছে।"
+                  : "Taslim Uddin is our UX/UI expert. He is doing all the HTML, CSS work in this project. Specially Login & Registration Page and did all the icon, logo design work for the entire website."}{" "}
+              </p>
+            </div>
+            <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="rounded-full border w-44 md:w-96"
+                src="/src/assets/images/Taslim.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
+              <img
+                className="rounded-full border w-44 md:w-96"
+                src="/src/assets/images/Asif.jpg"
                 alt=""
               />
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className=" text-blue-800 text-4xl font-semibold mb-2">
                 {changeLanguage
-                  ? "পবিত্র কুরআন শিক্ষা কার্যক্রম"
-                  : "Holy Quran Education Program"}
+                  ? "ফাতিকুল ফেরদাউস আসিফ"
+                  : "Fatiqul Ferdush Asif"}
               </h2>
               <p className="leading-relaxed text-lg">
                 {changeLanguage
-                  ? "আল হুদা একাডেমীর প্রধান কার্যক্রম হচ্ছে পবিত্র কুরআন শিক্ষা কার্যক্রম । আমাদের আছে দক্ষ হাফেয ও আলেম যাদের মাধ্যমে আপনি খুব সহজে সহি পারবেন।।"
-                  : "The main activity of Al Huda Academy is Holy Quran education program. We have skilled hafiz and scholars through whom you can easily cope."}{" "}
+                  ? "ফাতিকুল ইসলাম আসিফ আমাদের UX/UI এক্সপার্ট। তিনি এই প্রজেক্টে HTML, CSS এর যাবতীয় কাজ করছেন। বিশেষভাবে আমাদের সম্পর্কে, যোগাযোগ পেইজ এবং পুরো ওয়েবসাইটের জন্য সমস্ত গ্রাফিক ডিজাইনের কাজ করেছেন।"
+                  : "Fatiqul Islam Asif is our UX/UI expert. He is doing all the HTML, CSS work in this project. Specially About, Contact Page and did all the graphic design work for the entire website."}{" "}
               </p>
-              <Link
-                className="mt-3 text-green-500 inline-flex items-center text-xl"
-                to="/services"
-              >
-                {changeLanguage ? "বিস্তারিত" : "Details"}
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </Link>
             </div>
           </div>
-          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
-            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
-                {changeLanguage
-                  ? "প্রয়োজনীয় ইসলামিক আকিদা শিক্ষা কার্যক্রম"
-                  : "Essential Islamic Aqeedah Education Program"}
-              </h2>
-              <p className="leading-relaxed text-xl">
-                {changeLanguage
-                  ? "প্রয়োজনীয় ইসলামিক আকিদা শিক্ষা কার্যক্রমের মাধ্যমে কুরআন হাদিসের বেসিক আকিদা সমূহ, প্রয়োজনীয় সুরা শেখানো হয়।"
-                  : "Essential Islamic Aqeedah Education Program teaches the basic Aqeedahs of the Qur'anic Hadith, essential Surahs."}{" "}
-              </p>
-              <Link
-                className="mt-3 text-green-500 inline-flex items-center text-lg"
-                to="/services"
-              >
-                {changeLanguage ? "বিস্তারিত" : "Details"}
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </Link>
-            </div>
-            <div className="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
-              <img
-                className="sm:w-16 sm:h-16 w-10 h-10"
-                src="/img/vector-1.svg"
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
-            <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
-              <img
-                className="sm:w-16 sm:h-16 w-10 h-10"
-                src="/img/vector.svg"
-                alt=""
-              />
-            </div>
-            <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-              <h2 className="text-blue-800 text-4xl font-semibold mb-2">
-                {changeLanguage ? "গৃহশিক্ষক পরিষেবা" : "Tutoring Services"}
-              </h2>
-              <p className="leading-relaxed text-xl">
-                {changeLanguage
-                  ? "আল হুদা একাডেমী দিচ্ছে আপনাদের অনলাইন ও অফলাইন গৃহশিক্ষক পরিষেবা। আমাদের কাছে আছে দক্ষ ও বিশ্বস্ত শিক্ষক। এখন আপনি খুব সহজেই আপনার নিকতস্থ জেলা বা এলাকার শিক্ষক পেয়ে যান ঘরে বসেই।"
-                  : "Al Huda Academy offers you online and offline tutoring services. We have competent and reliable teachers. Now you can easily find the teacher of your nearest district or area at home."}
-              </p>
-              <Link
-                className="mt-3 text-green-500 inline-flex items-center text-lg"
-                to="/services"
-              >
-                {changeLanguage ? "বিস্তারিত" : "Details"}
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </Link>
-            </div>
-          </div>
-          <div className=" flex text-center justify-center ">
-            <button className="mb-2 bg-green-800 w-auto text-white m-10 py-2 px-5 text-xl">
-              <Link to="/services">
-                {changeLanguage ? "আরও দেখুন" : "More"}
-              </Link>
-            </button>
-          </div>
-        </div>
-        <div className="relative z-[-1]">
-          <img
-            className="absolute bottom-0 w-full text-center"
-            alt="Wave"
-            src="/img/wave-1-1.png"
-          />
         </div>
       </section>
 
-      {/* <div className="bg-rose-50">
-        <div className="text-4xl h-48 text-center text-white font-bold flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-          <h1 className="">
-            {changeLanguage ? "আমাদের সম্পর্কে" : "About Us"}
-          </h1>
-        </div>
-        <div className="flex justify-center items-center text-left max-w-screen-xl mx-auto mb-15">
-          <div className="m-6 px-20 text-slate-800 leading-loose text-lg">
-            <p className="text-center">
-              بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-            </p>
-            <p>
-              {" "}
-              {changeLanguage ? "নিশ্চয়ই সকল প্রশংসা আল্লাহর। আমরা আমাদের নিজেদের মধ্যে থাকা খারাপ কাজ এবং আমাদের খারাপ কাজ থেকে তাঁর কাছে আশ্রয় চাই। নবীজির উপর সালাম ও দরূদ বর্ষিত হোক" : "Indeed, all praise belongs to Allah. We seek refuge in Him from the evils within ourselves and from our ill deeds. Peace and blessings be upon the Prophet (ﷺ)."}              
-            </p>
-            <p>
-              {" "}
-              {changeLanguage ? "বিবাহ সর্বশক্তিমান আল্লাহ প্রদত্ত একটি স্বতন্ত্র আশীর্বাদ এবং নবী (স)-এর একটি গুরুত্বপূর্ণ সুন্নত. কোরান ও হাদিস অনুসারে বিয়েকে পবিত্রতার মাধ্যম, দ্বীনের অর্ধেক এবং আর্থিক সচ্ছলতার মাধ্যম হিসেবে গণ্য করা হয়। নৈতিক, আধ্যাত্মিক, সামাজিক এবং মনস্তাত্ত্বিকভাবে এর সুবিধার জন্য আল্লাহ বিশ্বাসীদেরকে বিয়ে করার নির্দেশ দেন। মহানবী (স). কোরান ও হাদিস অনুসারে বিয়েকে পবিত্রতার মাধ্যম, দ্বীনের অর্ধেক এবং আর্থিক সচ্ছলতার মাধ্যম হিসেবে গণ্য করা হয়। নৈতিক, আধ্যাত্মিক, সামাজিক এবং মনস্তাত্ত্বিকভাবে এর সুবিধার জন্য আল্লাহ বিশ্বাসীদেরকে বিয়ে করার নির্দেশ দেন। রাসুলুল্লাহ (সাঃ) বলেছেন, “বিবাহ আমার বিধান এবং আমার অভ্যাস। যারা আমার অভ্যাস অনুসরণ করে না তারা আমার দলভুক্ত নয়।" : "Marriage is a distinctive blessing given by Almighty Allah and a vital Sunnah of the Prophet (ﷺ). According to the Qur'an and Hadith, wedding is regarded as a means of purity, half of the deen (religion) and a means of financial prosperity. Allah commands the believers to marry for its benefits morally, spiritually, socially and psychologically. The Holy Prophet(ﷺ) said, “Marriage is my precept and my practice. Those who do not follow my practice are not of me.”"}
-              
-            </p>
-
-            <p className="text-center"> {changeLanguage ? "এবং" : "And"} </p>
-
-            <p>
-            {changeLanguage ? "'যখন একজন মানুষ বিয়ে করে, সে তার ধর্মের অর্ধেক পূর্ণ করে ফেলে।' বিবাহের উদ্দেশ্য হল একটি আইনি মিলন প্রদান করা যা সমাজকে নৈতিক ও সামাজিক অবক্ষয় থেকে রক্ষা করে।" : "“When a man has married, he has completed one half of his religion.” The purpose of marriage is to provide a legal union which safeguards society from moral and social degradation."}
-              {" "}
-            </p>
-
-            <p>
-            {changeLanguage ? "অপরদিকে জনগণের এটা বড় পরিতাপের বিষয় পশ্চিমা সভ্যতার দ্বারা প্রভাবিত হয়ে অসুস্থ জাতিকে তাড়া করছে নারী ও পুরুষের মধ্যে তথাকথিত সমতার বিরুদ্ধে যায় আল্লাহর হুকুম এবং এর ফলে নৈতিক অবক্ষয় ঘটছে সমাজে স্থান। প্রকৃতপক্ষে, অনুপ্রবেশের প্রধান কারণ শিক্ষা, কাজ এবং পশ্চিমের অসভ্য সংস্কৃতির বিয়ে হল ইসলামী শরীয়াহ ভিত্তিক নিয়ম অনুসরণ না করা এবং সম্পূর্ণ ধর্মীয় শিক্ষার অভাব। ফলে বিয়ে চ্যালেঞ্জিং হয়ে উঠেছে এবং সমাজ বোঝা হচ্ছে প্রতিনিয়ত ব্যভিচার সহ বিভিন্ন অবনতি সহ, ব্যভিচার, বিবাহ বহির্ভূত সম্পর্ক, ধর্ষণ, আত্মহত্যা ইত্যাদি।" : "On the other hand, it is a matter of great regret that people being influenced by western civilization are chasing the sick race of so-called equality between men and women that goes against the commandment of Allah and consequently, moral degradation is taking place in the society. Indeed, the main reason for the infiltration of the uncivilized culture of the West in education, work, and               marriage is not to follow the rules based on Islamic Shariah and the lack of complete religious education. As a result, marriage has become challenging and the society is being burdened constantly with various degradations including adultery, fornication, extra marital affairs, rape, suicide etc."}
-              
-            </p>
-
-            <p>
-            {changeLanguage ? "'তাছাড়া, যারা এই ভয়ঙ্কর ফিতনার যুগে (কষ্ট বা বিশৃঙ্খলার অবস্থা) পরিবারের অনৈসলামিক সংস্কৃতি এবং তথাকথিত সামাজিক রীতিনীতির বিরুদ্ধে সুন্নাহকে আঁকড়ে ধরার জন্য সংগ্রাম করছে, তারা ধার্মিক জীবন পেতে অনেক জটিলতার সম্মুখীন হচ্ছে। অংশীদাররা। বিষয়গুলো নিয়ে চিন্তাভাবনা করে আমরা, আল্লাহর কিছু পাপী দাস এই সমস্যাগুলো সমাধানের জন্য আশাবাদী হয়েছিলাম এবং অবশেষে একটি বাংলাদেশী ইসলামিক বৈবাহিক প্ল্যাটফর্ম NUB Metrimoni প্রতিষ্ঠা করতে সফল হয়েছি এবং 1 জানুয়ারী, 2021 তারিখে আমরা কার্যকরভাবে এর যাত্রা শুরু করেছি। আল্লাহর বিশেষ রহমত, ওয়েবসাইটটির মাধ্যমে ইতিমধ্যে শত শত অনুশীলনকারী মুসলমানের বিয়ে হয়েছে, আলহামদুলিল্লাহ।'" : "Moreover, those who are struggling against the un-Islamic culture of the family and the so-called social norms to cling to the Sunnah in this age of dreadful fitna (a state of trouble or chaos) are facing many complications to find pious life partners. Pondering over the issues we, some sinful slaves of Allah became optimistic to solve these problems and finally succeeded in establishing a Bangladeshi Islamic matrimonial platform, NUB Metrimoni and on January 1, 2021, we launched its journey effectively. By the mercy and special blessings of Allah, hundreds of practicing Muslims have already been married through the website, Alhamdulillah."}
-              {" "}
-            </p>
-
-            <p>
-            {changeLanguage ? "আমাদের উদ্দেশ্য হল এই ওয়েবসাইটটিকে একটি শরীয়াহ ভিত্তিক ইসলামিক বিবাহের প্ল্যাটফর্ম করা এবং ধর্মীয় ম্যাচমেকারদের খুঁজে পাওয়া সহজ করা। আমাদের সাইটের মূল উদ্দেশ্য হল বর্তমান জাহিলিয়া (অজ্ঞতার দিন) সমাজের সকল কুসংস্কার ও বর্বরতাকে মুছে দিয়ে এবং যৌতুকের বিরুদ্ধে সবাইকে সচেতন করে (কনের পরিবারের জন্য একটি চিরন্তন অভিশাপ) এবং উত্সাহিত করে ইসলামিক বিবাহের সুন্নাহ পদ্ধতিকে জনপ্রিয় করা। মহরের সাথে ম্যাচমেকিং (বর কর্তৃক মূল্যবান উপহার)।" : "Our aim is to make this website a Shariah based Islamic matrimony               platform and to make it easy to find religious matchmakers. Our prime motto of the Site is to popularize the Sunnah way of Islamic marriage by wiping out all superstitions and barbarism of the present jahiliyya (days of ignorance) society and making everyone aware against dowry (an eternal curse for the bride's family) and encouraging the matchmaking with mahr (valuable gift by grooms)."}
-            </p>
-
-            <p>
-            {changeLanguage ? "উপসংহারে, আমাদের ওয়েবসাইটের বিকাশের জন্য আমাদের সুদূরপ্রসারী পরিকল্পনা রয়েছে এবং আমরা ব্যবহারকারীদের কাছে সাইটটিকে সহজ করার জন্য ক্রমাগত গবেষণা করছি। আমরা যত তাড়াতাড়ি সম্ভব সমস্ত মুসলিম ভাই ও বোনদের কাছে এই পরিষেবাটি দক্ষতার সাথে পৌঁছে দেওয়ার জন্য আমাদের সর্বোচ্চ চেষ্টা করছি। আল্লাহ আমাদের নিয়তকে শুদ্ধ রাখুন, আমাদের সকল নেক আমল সহজ করে দিন এবং বরকত দান করুন। আমীন।" : "To conclude, we have far-reaching plans for the development of our               website and we are constantly researching to make the Site easier to the users. We are trying our level best to deliver this service efficiently to all Muslim brothers and sisters as soon as possible. May Allah keep our intentions pure, make all our good deeds easy and grant us blessings. Ameen."}
-              
-            </p>
-          </div>
-        </div>
-      </div> */}
       <Footer />
     </div>
   );

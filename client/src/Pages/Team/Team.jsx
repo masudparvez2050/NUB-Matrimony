@@ -287,7 +287,7 @@ function Team() {
                 />
               </div>
               <h2 className="flex justify-center font-bold mx-2 text-2xl mt-2">
-                Md Asif
+                Fatiqul Ferdush Asif
               </h2>
               <h3 className="flex justify-center font-bold mx-2 text-xl">
                 UX/UI/Frontend Designer
