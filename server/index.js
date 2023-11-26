@@ -1,7 +1,8 @@
 const bodyParser = require("body-parser");
-const studentRoutes = require("./routes/studentRoutes");
-const { authenticate, logout } = require("./helpers/auth");
-const { profile } = require("./helpers/profile");
+const userRoutes = require("./routes/userRoutes");
+const { authenticate, logout } = require("./helper/auth");
+
+const { profile } = require("./helper/profile");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
@@ -24,13 +25,14 @@ app.use(
   })
 );
 //routes
-app.use("/student", studentRoutes);
+app.use("/user", userRoutes);
 
 //auth route
 app.get("/", authenticate, (req, res) => {
   return res.json({
     Status: "Success",
     token: req.cookies.token,
+    gender: req.gender,
   });
 });
 
