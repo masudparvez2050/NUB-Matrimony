@@ -13,10 +13,13 @@ import Team from "./Pages/Team/Team";
 import Login from "./Pages/Authentication/Login";
 import Registration from "./Pages/Authentication/Registration";
 import ResetPassword from "./Pages/Authentication/ResetPassword";
+import { Toaster } from "react-hot-toast";
 
+Toaster;
 function App() {
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
       <LanguageProvider>
         <BrowserRouter>
           <Routes>

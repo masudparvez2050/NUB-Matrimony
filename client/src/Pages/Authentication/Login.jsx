@@ -2,9 +2,17 @@ import { Link } from "react-router-dom";
 import Footer from "../../Components/Layout/Footer";
 import Header from "../../Components/Layout/Header";
 import { useLanguage } from "../../contextAPI/ChangeLanguage";
-
+// import { useState } from "react";
+// import toast from "react-hot-toast";
 function Login() {
   const { changeLanguage } = useLanguage();
+  // const [formData, setFormData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+
+  // const navigate = useNavigate();
+
   return (
     <>
       <div>
