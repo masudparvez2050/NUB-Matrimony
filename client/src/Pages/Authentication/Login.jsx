@@ -1,17 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../Components/Layout/Footer";
 import Header from "../../Components/Layout/Header";
 import { useLanguage } from "../../contextAPI/ChangeLanguage";
-// import { useState } from "react";
-// import toast from "react-hot-toast";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import {
+  setSessionCookie,
+  setSessionCookieGender,
+  setSessionCookieUserid,
+} from "./../../utils/session";
+import BASE_URL from "./../../utils/URL";
+import axios from "axios";
 function Login() {
   const { changeLanguage } = useLanguage();
-  // const [formData, setFormData] = useState({
-  //   email: "",
-  //   password: "",
-  // });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    try {
+      const url = `${BASE_URL}/user/login`;
+      const response = await axios.post(url, formData);
+      // Store the token in local storage or cookies for future authenticated requests
+
+      setSessionCookie(response.data.token);
+      setSessionCookieGender(response.data.gender);
+      setSessionCookieUserid(response.data.userId);
+
+      toast.success(response.data.message);
+
+      navigate("/");
+      window.location.reload();
+    } catch (error) {
+      toast.error(error.response.request.statusText);
+      console.log(error.response.request.statusText);
+    }
+  };
 
   return (
     <>
@@ -42,7 +70,7 @@ function Login() {
 
           <!-- Start Right Section --> */}
           <div className="w-1/2 bg-white-300">
-            <form className="flex justify-center">
+            <form className="flex justify-center" onSubmit={handleLogin}>
               <div
                 className="m-10 p-10 border rounded-2xl md:w-[400px] shadow-purple-300 shadow-lg
               hover:shadow-purple-400 hover:shadow-xl  
@@ -66,8 +94,12 @@ function Login() {
                   className="border font-extralight rounded-md h-10 w-full my-2 px-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                   placeholder={changeLanguage ? "ই-মেইল এড্রেস" : "Enter Email"}
                   required
-                  type="text"
-                  name="username"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
 
                 <input
@@ -76,6 +108,10 @@ function Login() {
                   required
                   type="password"
                   name="password"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                 />
 
                 {/* <!--start- keep login and forget password --> */}
@@ -96,7 +132,7 @@ function Login() {
                 <div className="flex justify-center">
                   <button
                     className="my-4 py-2 px-10 rounded-full bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-purple-300 hover:shadow-lg hover:bg-pink-600 transition-all duration-500"
-                    type="Submit"
+                    type="submit"
                   >
                     {changeLanguage ? "লগইন" : "Log in"}
                   </button>
