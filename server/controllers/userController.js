@@ -93,14 +93,14 @@ const login = (req, res) => {
       // Set the JWT as a cookie in the response
       res.cookie("token", token);
       res.cookie("gender", user.gender);
-      res.cookie("userId", user.id);
+      res.cookie("userid", user.id);
 
       // Send a 200 success response with the JWT, username, and role
       res.status(200).json({
         message: "Login successful",
-        userId: user.id,
+        userid: user.id,
         username: user.username,
-        Gender: user.gender,
+        gender: user.gender,
         token,
       });
     });
