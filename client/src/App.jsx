@@ -14,28 +14,36 @@ import Login from "./Pages/Authentication/Login";
 import Registration from "./Pages/Authentication/Registration";
 import ResetPassword from "./Pages/Authentication/ResetPassword";
 import { Toaster } from "react-hot-toast";
+import UserProfile from "./Pages/test";
+import { AuthProvider } from "./contextAPI/authContext";
+import Profile from "./Pages/Profile";
 
 Toaster;
 function App() {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <LanguageProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/findpartner" element={<FindPartner />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/guide" element={<Guide />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/reset" element={<ResetPassword />} />
-          </Routes>
-        </BrowserRouter>
-      </LanguageProvider>
+      <AuthProvider>
+        {" "}
+        <LanguageProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/findpartner" element={<FindPartner />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/guide" element={<Guide />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/registration" element={<Registration />} />
+              <Route path="/reset" element={<ResetPassword />} />
+              <Route path="/profile/*" element={<Profile />} />
+              <Route path="/test" element={<UserProfile />} />
+            </Routes>
+          </BrowserRouter>
+        </LanguageProvider>
+      </AuthProvider>
     </>
   );
 }

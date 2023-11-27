@@ -146,13 +146,13 @@ function Registration() {
               />
 
               <select
-                className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200 text-gray-400"
+                className="border rounded-md p-2 w-full my-2 focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200 text-gray-800"
                 type="number"
                 name="Gender"
                 value={selectedGender}
                 onChange={handleInputChange}
               >
-                <option value>
+                <option value="" disabled>
                   {changeLanguage
                     ? "জেন্ডার নির্বাচন করুন"
                     : "Select your gender"}

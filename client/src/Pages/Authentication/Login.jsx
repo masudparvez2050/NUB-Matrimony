@@ -29,8 +29,8 @@ function Login() {
 
       setSessionCookie(response.data.token);
       setSessionCookieGender(response.data.gender);
-      setSessionCookieUserid(response.data.userId);
-
+      setSessionCookieUserid(response.data.userid);
+      console.log(response.data);
       toast.success(response.data.message);
 
       navigate("/");

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import BASE_URL from "../utils/URL";
 
 const AuthContext = createContext();
 
@@ -19,8 +20,9 @@ export const AuthProvider = ({ children }) => {
     } else {
       setAuth(false);
     }
+
     axios
-      .get("http://localhost:8000/")
+      .get(BASE_URL)
       .then((res) => {
         if (res.data.Status === "Success") {
           setAuth(true);
