@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 function UpdateProfile() {
   const [selectedTab, setSelectedTab] = useState(1);
   const [file, setFile] = useState();
-  const [data, setData] = useState([]);
+  const [profileData, setProfileData] = useState([]);
   const { auth } = useAuth();
 
   const handleTabClick = (tabNumber) => {
@@ -42,32 +42,21 @@ function UpdateProfile() {
       .catch((err) => console.log(err));
   };
 
+  // profileData
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await axios.get(`${BASE_URL}/profile`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          timeout: 5000,
-        });
-
-        // // Format the date before setting it in the state
-        const fData = {
-          ...response.data[0],
-          birthdate: format(new Date(response.data[0].birthdate), "dd-MM-yyyy"),
-        };
-
-        setData(fData);
-
-        // setData(response.data[0]);
-      } catch (error) {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`${BASE_URL}/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setProfileData(response.data[0]);
+      })
+      .catch((error) => {
         console.error(error);
-      }
-    };
-
-    fetchData();
+      });
   }, []);
 
   // if (!auth) {
@@ -154,11 +143,11 @@ function UpdateProfile() {
                         <img
                           className="h-32 w-32 rounded-md object-cover "
                           src={
-                            data && data.profile_pic
-                              ? getImageUrl(data.profile_pic)
-                              : data && data.gender === "Male"
+                            profileData && profileData.profile_pic
+                              ? getImageUrl(profileData.profile_pic)
+                              : profileData && profileData.gender === "Male"
                               ? "../src/assets/images/groom.png"
-                              : data && data.gender === "Female"
+                              : profileData && profileData.gender === "Female"
                               ? "../src/assets/images/bridal.png"
                               : null // or provide a default image URL
                           }

@@ -175,7 +175,7 @@ const fetchAuthStudent = (req, res) => {
 };
 
 const fetchStudent = (req, res) => {
-  const user = "SELECT id, username, gender FROM users";
+  const user = "SELECT id, username, gender, profile_pic FROM users";
   // "SELECT id, custom_id, firstname, lastname, profile_pic, role, division, district, post_office, village, gender, course FROM student";
   db.query(user, (err, profiles) => {
     if (err) {

@@ -16,6 +16,7 @@ import Footer from "../../Components/Layout/Footer";
 
 const ProfileCard = ({ profile, onClick }) => {
   const { changeLanguage } = useLanguage();
+
   return (
     <div className="bg-white shadow-md shadow-purple-300 rounded-2xl pb-4 m-4 cursor-pointer hover:shadow-2xl text-center  flex flex-wrap border hover:shadow-purple-400 transition-all duration-500">
       <div className="w-full transition-all duration-500 ">
@@ -338,10 +339,10 @@ const ProfileSection = () => {
             <li className="page-item ">
               <button
                 onClick={() => goToPage(currentPage - 1)}
-                className="page-link text-2xl text-gray-600 mr-2"
+                className="page-link text-2xl text-gray-600 mr-2 items"
                 disabled={currentPage === 1}
               >
-                <img className="w-5" src="/img/left_arrow.png" alt="" />
+                <i className="fa-solid fa-angle-left w-5 text-[#ff0081]"></i>
               </button>
             </li>
             {generatePagination()}
@@ -351,7 +352,7 @@ const ProfileSection = () => {
                 className="page-link text-2xl text-gray-600 ml-2"
                 disabled={currentPage === totalPages}
               >
-                <img className="w-5" src="/img/right_arrow.png" alt="" />
+                <i className="fa-solid fa-angle-right w-5 text-[#ff0081]"></i>
               </button>
             </li>
           </ul>
@@ -364,7 +365,7 @@ const ProfileSection = () => {
             {changeLanguage ? "বিস্তারিত প্রোফাইল" : "Profile Details"}
           </h2>
           <div className="bg-white shadow-xl rounded-md p-4 text-center">
-            <div className="flex justify-center ">
+            <div className="md:ml-32 flex items-center">
               <img
                 className="w-40 rounded-full mb-2 border-2 border-[#ff0081]"
                 src={
@@ -378,24 +379,31 @@ const ProfileSection = () => {
                 }
                 alt=""
               />
+              <div className="text-left ml-4">
+                {" "}
+                <h2 className="text-lg font-semibold">
+                  {selectedProfile.username.charAt(0).toUpperCase() +
+                    selectedProfile.username.slice(1)}
+                </h2>
+                <p className="text-gray-500">
+                  {selectedProfile.gender.charAt(0).toUpperCase() +
+                    selectedProfile.gender.slice(1)}
+                </p>{" "}
+                <p className="text-gray-500"> ID: {selectedProfile.id}</p>
+              </div>
             </div>
-            <h2 className="text-lg font-semibold">
-              {selectedProfile.username.charAt(0).toUpperCase() +
-                selectedProfile.username.slice(1)}
-            </h2>
-            <p className="text-gray-500">
-              {selectedProfile.gender.charAt(0).toUpperCase() +
-                selectedProfile.gender.slice(1)}
-            </p>
-            <p className="text-gray-500"> ID: {selectedProfile.id}</p>
+
             <div className="flex flex-col m-5 overflow-x-auto">
               <table className="table table-fixed border text-left md:mx-20 break-all whitespace-nowrap ">
                 <thead>
-                  <tr className="text-center">
-                    <th colSpan="2" className=" px-4 py-2 text-gray-700 ">
+                  <tr className="">
+                    <th
+                      colSpan="2"
+                      className=" px-4 py-4 text-xl text-gray-700 "
+                    >
                       {changeLanguage
-                        ? "বিস্তারিত প্রোফাইল"
-                        : "Profile Details"}
+                        ? "ব্যাক্তিগত তথ্য"
+                        : "Personal Information"}
                     </th>
                   </tr>
                 </thead>
@@ -413,7 +421,7 @@ const ProfileSection = () => {
                   <tr className="border">
                     <td className=" px-4 py-2 text-gray-700 border">
                       {" "}
-                      {changeLanguage ? "শিক্ষক/শিক্ষার্থী" : "Teacher/Student"}
+                      {changeLanguage ? "শিক্ষক/শিক্ষার্থী" : "Gender"}
                     </td>
                     <td className=" px-4 py-2 text-gray-700 border">null</td>
                   </tr>
@@ -453,8 +461,8 @@ const ProfileSection = () => {
                           {changeLanguage ? "ই-মেইল" : "Email"}
                         </td>
                         <td className=" whitespace-normal px-4 py-2 text-gray-700 border">
-                          <a href="mailto:alhudaacademy2023@gmail.com">
-                            alhudaacademy2023@gmail.com
+                          <a href="mailto:masudparvez2050@gmail.com">
+                            nubmatrimony@gmail.com
                           </a>
                         </td>
                       </tr>
@@ -464,7 +472,7 @@ const ProfileSection = () => {
                           {changeLanguage ? "মোবাইল" : "Mobile"}
                         </td>
                         <td className="px-4 py-2 text-gray-700 border">
-                          <a href="tel:+8801601332914"> +880 01601-332914</a>
+                          <a href="tel:+8801601332914"> +880 00000-000000</a>
                         </td>
                       </tr>
                     </>

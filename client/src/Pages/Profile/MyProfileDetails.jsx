@@ -1,8 +1,30 @@
 import Header from "./../../Components/Layout/Header";
 import LeftSidebar from "./LeftSidebar";
 import Footer from "./../../Components/Layout/Footer";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import BASE_URL, { getImageUrl } from "../../utils/URL";
 
 function MyProfileDetails() {
+  const [profileData, setProfileData] = useState([]);
+
+  // profileData
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`${BASE_URL}/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setProfileData(response.data[0]);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <>
       <main className="bg-gray-100">
@@ -22,7 +44,15 @@ function MyProfileDetails() {
                       <div className="flex items-center">
                         <img
                           className="h-24 w-24 rounded-full object-cover"
-                          src="https://source.unsplash.com/random"
+                          src={
+                            profileData && profileData.profile_pic
+                              ? getImageUrl(profileData.profile_pic)
+                              : profileData && profileData.gender === "Male"
+                              ? "../src/assets/images/groom.png"
+                              : profileData && profileData.gender === "Female"
+                              ? "../src/assets/images/bridal.png"
+                              : null // or provide a default image URL
+                          }
                           alt="Profile image"
                         />
                         <div className="ml-4">
