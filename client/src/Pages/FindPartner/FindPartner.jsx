@@ -237,9 +237,7 @@ const ProfileSection = () => {
             htmlFor="roleFilter"
             className="block text-sm font-medium text-gray-700"
           >
-            {changeLanguage
-              ? "শিক্ষক/শিক্ষার্থী নির্বাচন করুন"
-              : "Select Teacher/Student"}
+            {changeLanguage ? "" : "Select Groom/Bridal"}
           </label>
           <select
             id="roleFilter"

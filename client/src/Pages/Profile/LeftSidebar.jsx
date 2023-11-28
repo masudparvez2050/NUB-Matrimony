@@ -1,11 +1,31 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
-import BASE_URL from "../../utils/URL";
+import BASE_URL, { getImageUrl } from "../../utils/URL";
 import { clearSessionCookie } from "../../utils/session";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 function LeftSidebar() {
   const navigate = useNavigate();
+  const [profileData, setProfileData] = useState([]);
+
+  // profileData
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`${BASE_URL}/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setProfileData(response.data[0]);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   //logout function
   const handleLogout = async () => {
     try {
@@ -34,11 +54,19 @@ function LeftSidebar() {
           {" "}
           <img
             className="h-24 w-24 rounded-full object-cover mt-5 mb-2"
-            src="https://source.unsplash.com/random"
+            src={
+              profileData && profileData.profile_pic
+                ? getImageUrl(profileData.profile_pic)
+                : profileData && profileData.gender === "Male"
+                ? "../src/assets/images/groom.png"
+                : profileData && profileData.gender === "Female"
+                ? "../src/assets/images/bridal.png"
+                : null // or provide a default image URL
+            }
             alt="Profile image"
           />
-          <p className="text-sm text-gray-500">ID: 01</p>
-          <p className="text-sm text-gray-500">Masudur Rahman</p>
+          <p className="text-sm text-gray-500">ID: 0{profileData.id}</p>
+          <p className="text-sm text-gray-500">{profileData.username}</p>
           <div className="mt-10">
             {/* ---button--- */}
 

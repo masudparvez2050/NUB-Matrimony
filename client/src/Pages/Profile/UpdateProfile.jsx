@@ -1,14 +1,79 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../../Components/Layout/Footer";
 import Header from "../../Components/Layout/Header";
 import LeftSidebar from "./LeftSidebar";
+import axios from "axios";
+import BASE_URL, { getImageUrl } from "../../utils/URL";
+import { format } from "date-fns";
+import { useAuth } from "../../contextAPI/authContext";
+import { Navigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function UpdateProfile() {
   const [selectedTab, setSelectedTab] = useState(1);
+  const [file, setFile] = useState();
+  const [data, setData] = useState([]);
+  const { auth } = useAuth();
 
   const handleTabClick = (tabNumber) => {
     setSelectedTab(tabNumber);
   };
+
+  // image upload function
+  const handleFile = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleUpload = () => {
+    const formdata = new FormData();
+    formdata.append("image", file);
+    axios
+      .post(`${BASE_URL}/user/upload`, formdata)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          console.log("Image uploaded successfully");
+          toast.success("Image uploaded successfully");
+        } else {
+          console.log("Image Upload failed");
+          console.log(res.data.Status);
+          toast.error("Upload failed");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await axios.get(`${BASE_URL}/profile`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          timeout: 5000,
+        });
+
+        // // Format the date before setting it in the state
+        const fData = {
+          ...response.data[0],
+          birthdate: format(new Date(response.data[0].birthdate), "dd-MM-yyyy"),
+        };
+
+        setData(fData);
+
+        // setData(response.data[0]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // if (!auth) {
+  //   return <Navigate to="/login" />; //
+  // }
+
   return (
     <>
       {" "}
@@ -88,21 +153,33 @@ function UpdateProfile() {
                       <div className="flex items-center">
                         <img
                           className="h-32 w-32 rounded-md object-cover "
-                          // src="https://source.unsplash.com/random"
-                          src="../src/assets/images/Masud.jpg"
+                          src={
+                            data && data.profile_pic
+                              ? getImageUrl(data.profile_pic)
+                              : data && data.gender === "Male"
+                              ? "../src/assets/images/groom.png"
+                              : data && data.gender === "Female"
+                              ? "../src/assets/images/bridal.png"
+                              : null // or provide a default image URL
+                          }
                           alt="Profile image"
                         />
-                        <form className="ml-4">
+                        <div className="ml-4">
                           <input
                             type="file"
+                            onChange={handleFile}
+                            name="profile_pic"
                             className="leading-6 font-medium mb-6 text-sm text-gray-300 "
                           />
                           <div>
-                            <button className="bg-[#ff0081] hover:bg-[#e3215b] text-white py-2 px-4 rounded-full transition-all duration-300 shadow-xl mt-6">
+                            <button
+                              onClick={handleUpload}
+                              className="bg-[#ff0081] hover:bg-[#e3215b] text-white py-2 px-4 rounded-full transition-all duration-300 shadow-xl mt-6"
+                            >
                               Update Photo
                             </button>
                           </div>
-                        </form>
+                        </div>
                       </div>
                     </div>
                   </div>
