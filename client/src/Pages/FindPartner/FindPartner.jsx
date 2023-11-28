@@ -22,7 +22,7 @@ const ProfileCard = ({ profile, onClick }) => {
         <div className="bg-pink-500 h-24 px-4 rounded-2xl transition-all duration-500"></div>
         <div className="flex justify-center">
           <img
-            className="rounded-full  w-32 -mt-14 mb-5 border-2 border-[#ff0081]"
+            className="rounded-full  w-32 -mt-14  border-2 border-[#ff0081]"
             src={
               profile && profile.profile_pic
                 ? getImageUrl(profile.profile_pic)
@@ -34,10 +34,17 @@ const ProfileCard = ({ profile, onClick }) => {
             }
             alt=""
           />
+        </div>{" "}
+        <div className="flex justify-center mb-5">
+          <img src="../src/assets/images/hadith-bg-top.svg" alt="" />
         </div>
         <div className="mb-5">
-          <h2 className="text-md font-semibold mb-2">{profile.id}</h2>{" "}
-          <h2 className="text-lg font-semibold mb-2">{profile.username}</h2>
+          <h2 className="text-md text-gray-700 font-semibold mb-2">
+            ID: {profile.id}
+          </h2>{" "}
+          <h2 className="text-lg text-gray-700 font-semibold mb-2">
+            {profile.username}
+          </h2>
           <p className="text-gray-500">{profile.gender}</p>
           {/* Add more profile details here */}
         </div>
@@ -218,14 +225,12 @@ const ProfileSection = () => {
   return (
     <div className="flex justify-center flex-col md:flex-row bg-gray-100 ">
       <div
-        className={`md:w-3/5 xl:w-1/5 mr-4 p-4 bg-white shadow-xl h-screen rounded-md ${
+        className={`md:w-3/5 xl:w-1/5 mr-4 p-4 bg-white shadow-xl xl:h-screen rounded-md ${
           selectedProfile ? "hidden" : "block"
         }`}
       >
         <h1 className="text-2xl font-semibold mb-4 text-center">
-          {changeLanguage
-            ? "শিক্ষক অথবা শিক্ষার্থী খুঁজুন"
-            : "Seacher Teacher or Student"}
+          {changeLanguage ? "" : "Seacher Groom or Bridal"}
         </h1>
         <div className="mb-4">
           <label
@@ -318,7 +323,7 @@ const ProfileSection = () => {
         </div>
       </div>
       <div
-        className={`w-full xl:w-4/5 md:ml-10  p-4 flex flex-wrap justify-center shadow-xl bg-white ${
+        className={`w-full xl:w-4/5 md:ml-10  p-4 flex flex-wrap justify-center xl:justify-start shadow-xl bg-white ${
           selectedProfile ? "hidden" : "block"
         }`}
       >
@@ -503,7 +508,6 @@ const ProfileSection = () => {
 };
 
 function FindPartner() {
-  const { changeLanguage } = useLanguage();
   return (
     <>
       <Header />

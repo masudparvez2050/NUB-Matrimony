@@ -46,7 +46,7 @@ router.post("/reset-password", userController.resetPassword);
 // image upload middleware
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/images/student");
+    cb(null, "public/images/users");
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));

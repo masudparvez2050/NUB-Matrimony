@@ -322,7 +322,7 @@ const uploadProfilePic = (req, res) => {
         currentImage
       );
 
-      console.log();
+      console.log(previousImagePath);
 
       fs.unlink(previousImagePath, (deleteErr) => {
         if (deleteErr) {
@@ -332,16 +332,16 @@ const uploadProfilePic = (req, res) => {
     }
     // Find user name for new image name
 
-    const getUserNameSql = "SELECT firstname FROM student where id = ?";
+    const getUserNameSql = "SELECT username FROM users where id = ?";
     db.query(getUserNameSql, [id], (err, result) => {
       if (err) {
         return res.status(500).json({ Message: "Error" });
       }
       console.log(result);
-      const newImageFilename = `${id}_${result[0].firstname}${path.extname(
+      const newImageFilename = `${id}_${result[0].username}${path.extname(
         req.file.originalname
       )}`;
-      const newImage = `images/student/${newImageFilename}`;
+      const newImage = `images/users/${newImageFilename}`;
       console.log(`newImageFilename : ${newImageFilename}`);
       console.log(`newImage: ${newImage}`);
 
@@ -358,13 +358,12 @@ const uploadProfilePic = (req, res) => {
         }
 
         // Update the database with the new image
-        const updateImageSql =
-          "UPDATE student SET profile_pic = ? WHERE id = ?";
+        const updateImageSql = "UPDATE users SET profile_pic = ? WHERE id = ?";
         db.query(updateImageSql, [newImage, id], (updateErr, updateResult) => {
           if (updateErr) {
             return res.status(500).json({ Message: "Error" });
           }
-          res.json({ Status: "Success" });
+          res.json({ Status: "Image Update Success" });
           console.log(updateResult);
         });
       });
