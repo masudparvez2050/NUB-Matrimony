@@ -25,7 +25,7 @@ function AboutUs() {
             <img src="/src/assets/images/Banner.png" alt="" />
           </div>
 
-          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="flex items-center lg:w-3/4 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
               <img
                 className="rounded-full border w-44 md:w-96"
@@ -45,7 +45,7 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="flex items-center lg:w-3/4 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-blue-800 text-4xl font-semibold mb-2">
                 {changeLanguage ? "মাসুদুর রহমান" : "Masudur Rahman"}
@@ -64,7 +64,7 @@ function AboutUs() {
               />
             </div>
           </div>
-          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="flex items-center lg:w-3/4 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
               <img
                 className="rounded-full border w-44 md:w-96"
@@ -84,7 +84,7 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="flex items-center lg:w-3/4 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-blue-800 text-4xl font-semibold mb-2">
                 {changeLanguage ? "মোঃ তসলিম উদ্দিন" : "Md. Taslim Uddin"}
@@ -104,7 +104,7 @@ function AboutUs() {
             </div>
           </div>
 
-          <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+          <div className="flex items-center lg:w-3/4 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
             <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 flex-shrink-0">
               <img
                 className="rounded-full border w-44 md:w-96"
