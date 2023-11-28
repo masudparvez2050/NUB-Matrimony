@@ -312,17 +312,17 @@ const uploadProfilePic = (req, res) => {
     }
 
     const currentImage = results[0] ? results[0].profile_pic : null;
-    console.log(currentImage);
+    console.log(`currentImage ${currentImage}`);
 
     // Delete the previous image if it exists
     if (currentImage) {
       const previousImagePath = path.join(
         __dirname,
-        "../public/images",
+        "../public/",
         currentImage
       );
 
-      console.log(previousImagePath);
+      console.log(`previousImagePath: ${previousImagePath}`);
 
       fs.unlink(previousImagePath, (deleteErr) => {
         if (deleteErr) {
@@ -363,7 +363,7 @@ const uploadProfilePic = (req, res) => {
           if (updateErr) {
             return res.status(500).json({ Message: "Error" });
           }
-          res.json({ Status: "Image Update Success" });
+          res.json({ Status: "Success" });
           console.log(updateResult);
         });
       });
