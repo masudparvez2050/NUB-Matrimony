@@ -2,7 +2,7 @@ const db = require("../config/dbConnection");
 
 exports.profile = (req, res) => {
   try {
-    const userId = req.cookies.userId; // Get logged-in user ID
+    const userId = req.cookies.userid; // Get logged-in user ID
     const query = `SELECT * FROM users WHERE id = ${userId}`;
     db.query(query, (err, profile) => {
       if (err) {
