@@ -52,8 +52,7 @@ const ProfileCard = ({ profile, onClick }) => {
         <div className="">
           <button
             className="bg-pink-500  hover:shadow-xl text-white font-bold py-3 px-5 rounded-full cursor-pointer transition-all duration-500"
-            onClick={() => onClick(profile.id)}
-          >
+            onClick={() => onClick(profile.id)}>
             {changeLanguage ? "বিস্তারিত" : "View Details"}
           </button>
         </div>
@@ -205,8 +204,7 @@ const ProfileSection = () => {
         key={page}
         className={`page-item ${
           currentPage === page ? "text-white bg-[#ff0081] rounded-md" : "m-1"
-        }`}
-      >
+        }`}>
         <button
           onClick={() => handlePageClick(page)}
           className={`page-item ${
@@ -228,16 +226,14 @@ const ProfileSection = () => {
       <div
         className={`md:w-3/5 xl:w-1/5 mr-4 p-4 bg-white shadow-xl xl:h-screen rounded-md ${
           selectedProfile ? "hidden" : "block"
-        }`}
-      >
+        }`}>
         <h1 className="text-2xl font-semibold mb-4 text-center">
           {changeLanguage ? "" : "Seacher Groom or Bridal"}
         </h1>
         <div className="mb-4">
           <label
             htmlFor="roleFilter"
-            className="block text-sm font-medium text-gray-700"
-          >
+            className="block text-sm font-medium text-gray-700">
             {changeLanguage ? "" : "Select Groom/Bridal"}
           </label>
           <select
@@ -245,16 +241,15 @@ const ProfileSection = () => {
             name="roleFilter"
             className="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 border"
             onChange={handleRoleChange}
-            value={selectedRole}
-          >
+            value={selectedRole}>
             <option value={changeLanguage ? "সকল" : "All"}>
               {changeLanguage ? "সকল" : "All"}
             </option>
-            <option value={changeLanguage ? "শিক্ষক" : "Male"}>
-              {changeLanguage ? "শিক্ষক" : "Male"}
+            <option value={changeLanguage ? "পাত্র" : "Male"}>
+              {changeLanguage ? "পাত্র" : "Male"}
             </option>
-            <option value={changeLanguage ? "শিক্ষার্থী" : "Female"}>
-              {changeLanguage ? "শিক্ষার্থী" : "Female"}
+            <option value={changeLanguage ? "পাত্রী" : "Female"}>
+              {changeLanguage ? "পাত্রী" : "Female"}
             </option>
           </select>
         </div>
@@ -306,8 +301,7 @@ const ProfileSection = () => {
         <div className="mb-4">
           <label
             htmlFor="locationFilter"
-            className="block text-sm font-medium text-gray-700"
-          >
+            className="block text-sm font-medium text-gray-700">
             Location
           </label>
           <input
@@ -324,8 +318,7 @@ const ProfileSection = () => {
       <div
         className={`w-full xl:w-4/5 md:ml-10  p-4 flex flex-wrap justify-center xl:justify-start shadow-xl bg-white ${
           selectedProfile ? "hidden" : "block"
-        }`}
-      >
+        }`}>
         {currentProfiles.map((profile) => (
           <div key={profile.id} className="w-full sm:w-2/3 md:w-3/3 xl:w-1/4">
             <ProfileCard profile={profile} onClick={openProfileDetails} />
@@ -340,8 +333,7 @@ const ProfileSection = () => {
               <button
                 onClick={() => goToPage(currentPage - 1)}
                 className="page-link text-2xl text-gray-600 mr-2 items"
-                disabled={currentPage === 1}
-              >
+                disabled={currentPage === 1}>
                 <i className="fa-solid fa-angle-left w-5 text-[#ff0081]"></i>
               </button>
             </li>
@@ -350,8 +342,7 @@ const ProfileSection = () => {
               <button
                 onClick={() => goToPage(currentPage + 1)}
                 className="page-link text-2xl text-gray-600 ml-2"
-                disabled={currentPage === totalPages}
-              >
+                disabled={currentPage === totalPages}>
                 <i className="fa-solid fa-angle-right w-5 text-[#ff0081]"></i>
               </button>
             </li>
@@ -399,8 +390,7 @@ const ProfileSection = () => {
                   <tr className="">
                     <th
                       colSpan="2"
-                      className=" px-4 py-4 text-xl text-gray-700 "
-                    >
+                      className=" px-4 py-4 text-xl text-gray-700 ">
                       {changeLanguage
                         ? "ব্যাক্তিগত তথ্য"
                         : "Personal Information"}
@@ -421,7 +411,7 @@ const ProfileSection = () => {
                   <tr className="border">
                     <td className=" px-4 py-2 text-gray-700 border">
                       {" "}
-                      {changeLanguage ? "শিক্ষক/শিক্ষার্থী" : "Gender"}
+                      {changeLanguage ? "লিঙ্গ" : "Gender"}
                     </td>
                     <td className=" px-4 py-2 text-gray-700 border">null</td>
                   </tr>
@@ -446,8 +436,7 @@ const ProfileSection = () => {
                       <tr className="border">
                         <td
                           colSpan={2}
-                          className=" px-4 py-2 text-gray-700 border bg-blue-200"
-                        >
+                          className=" px-4 py-2 text-gray-700 border bg-blue-200">
                           <center>
                             {changeLanguage
                               ? "যোগাযোগের জন্য নীচের ই-মেইল বা ফোন নাম্বার ব্যাবহার করুন"
@@ -484,8 +473,7 @@ const ProfileSection = () => {
                           <center>
                             <Link
                               to="/login"
-                              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-md"
-                            >
+                              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-md">
                               {changeLanguage
                                 ? "যোগাযোগের তথ্য দেখুন"
                                 : "View Contact Information"}
@@ -502,8 +490,7 @@ const ProfileSection = () => {
             </div>
             <button
               onClick={goBack}
-              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-normal py-2 px-4 rounded-md"
-            >
+              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-normal py-2 px-4 rounded-md">
               {changeLanguage ? "পিছনে" : "Back"}
             </button>
           </div>
