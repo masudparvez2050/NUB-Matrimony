@@ -4,7 +4,7 @@ import Header from "../../Components/Layout/Header";
 import LeftSidebar from "./LeftSidebar";
 import axios from "axios";
 import BASE_URL, { getImageUrl } from "../../utils/URL";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import { useAuth } from "../../contextAPI/authContext";
 import { Navigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 function UpdateProfile() {
   const [selectedTab, setSelectedTab] = useState(1);
   const [file, setFile] = useState();
+  const [dateFormat, setDateFormat] = useState();
   const [profileData, setProfileData] = useState({
     // Initialize with default values for your form fields
     id: "",
@@ -62,6 +63,16 @@ function UpdateProfile() {
       })
       .then((response) => {
         setProfileData(response.data[0]);
+
+        const parsedDate = parse(
+          response.data[0].dob,
+          "yyyy-MM-dd",
+          new Date()
+        );
+
+        const formattedDate = format(parsedDate, "dd-MM-yyyy");
+
+        setDateFormat(formattedDate);
       })
       .catch((error) => {
         console.error(error);
@@ -104,8 +115,9 @@ function UpdateProfile() {
       .catch((err) => console.log(err));
   };
 
-  // // Format the date before setting it in the state
-  const formatDate = (new Date(profileData.dob), "dd-MM-yyyy");
+  const formattedDate = profileData.dob
+    ? format(new Date(profileData.dob), "dd-MM-yyyy")
+    : "Invalid Date";
 
   return (
     <>
@@ -286,17 +298,31 @@ function UpdateProfile() {
 
                         <div className="flex">
                           {" "}
-                          {/* ------------- */}
-                          <div className="ml-28 m-2 p-2 w-full">
-                            <div className="">
-                              <p className="">Date of Birth</p>
-                              <input
-                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                                type="date"
-                                name="dob"
-                                value=""
-                                onChange={handleInputChange}
-                              />
+                          <div className="flex justify-start">
+                            {/* ------------- */}
+                            <div className="ml-28 my-2 py-2 ">
+                              <div className="">
+                                <p className="">Date of Birth</p>
+                                <p
+                                  className="border p-3 my-1 rounded-lg "
+                                  name="dob"
+                                >
+                                  {formattedDate}
+                                </p>
+                              </div>
+                            </div>
+                            {/* ------------- */}
+                            <div className=" my-2 py-2 w-[13%]">
+                              <div className="">
+                                <p className="text-white">DOB</p>
+                                <input
+                                  className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                                  type="date"
+                                  name="dob"
+                                  value={dateFormat}
+                                  onChange={handleInputChange}
+                                />
+                              </div>
                             </div>
                           </div>
                           {/* ------------- */}
