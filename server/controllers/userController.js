@@ -153,6 +153,7 @@ const deleteUser = (req, res) => {
 
 const updateUser = (req, res) => {
   // const { firstname, lastname, phone, email, role } = req.body;
+  console.log(req.body);
   const { id } = req.params; // Profile ID to update
 
   const profile = req.body;
@@ -161,7 +162,7 @@ const updateUser = (req, res) => {
     if (err) {
       return res.status(400).json({ error: "Profile update failed" });
     }
-    res.status(200).json({ message: "Profile updated successfully" });
+    res.status(200).json({ Status: "Success" });
   });
 };
 

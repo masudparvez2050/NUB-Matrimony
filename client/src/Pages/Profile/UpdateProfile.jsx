@@ -12,7 +12,15 @@ import toast from "react-hot-toast";
 function UpdateProfile() {
   const [selectedTab, setSelectedTab] = useState(1);
   const [file, setFile] = useState();
-  const [profileData, setProfileData] = useState([]);
+  const [profileData, setProfileData] = useState({
+    // Initialize with default values for your form fields
+    id: "",
+    username: "",
+    email: "",
+    phone: "",
+    dob: "",
+    gender: "",
+  });
   const { auth } = useAuth();
 
   const handleTabClick = (tabNumber) => {
@@ -33,6 +41,7 @@ function UpdateProfile() {
         if (res.data.Status === "Success") {
           console.log("Image uploaded successfully");
           toast.success("Image uploaded successfully");
+          window.location.reload();
         } else {
           console.log("Image Upload failed");
           console.log(res.data.Status);
@@ -59,11 +68,44 @@ function UpdateProfile() {
       });
   }, []);
 
-  // if (!auth) {
-  //   return <Navigate to="/login" />; //
-  // }
+  if (!auth) {
+    return <Navigate to="/login" />; //
+  }
 
-  // Update profile API
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    setProfileData({
+      ...profileData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Handle form submission
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    axios
+      .put(`${BASE_URL}/user/update/${profileData.id}`, profileData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          console.log("Profile updated successfully");
+          toast.success("Profile updated successfully");
+          console.log(res.data);
+        } else {
+          console.log("Profile update failed");
+          console.log(res.data.Status);
+          toast.error("Update failed");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // // Format the date before setting it in the state
+  const formatDate = (new Date(profileData.dob), "dd-MM-yyyy");
 
   return (
     <>
@@ -179,7 +221,10 @@ function UpdateProfile() {
                         </div>
                       </div>
 
-                      <form className="m-4 mx-8 p-4 font-normal  text-gray-600">
+                      <form
+                        onSubmit={handleFormSubmit}
+                        className="m-4 mx-8 p-4 font-normal  text-gray-600"
+                      >
                         <h1 className="text-xl font-bold text-gray-800 pb-2 mb-3 border-b ml-10">
                           Personal Information
                         </h1>
@@ -189,6 +234,10 @@ function UpdateProfile() {
                             <input
                               className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                               type="text"
+                              name="id"
+                              value={profileData.id}
+                              onChange={handleInputChange}
+                              readOnly // Read-only because ID should not be modified
                             />
                           </div>
                         </div>
@@ -199,6 +248,9 @@ function UpdateProfile() {
                             <input
                               className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                               type="text"
+                              name="username"
+                              value={profileData.username}
+                              onChange={handleInputChange}
                             />
                           </div>
                         </div>
@@ -211,6 +263,9 @@ function UpdateProfile() {
                               <input
                                 className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                                 type="email"
+                                name="email"
+                                value={profileData.email}
+                                onChange={handleInputChange}
                               />
                             </div>
                           </div>
@@ -221,6 +276,9 @@ function UpdateProfile() {
                               <input
                                 className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                                 type="text"
+                                name="phone"
+                                value={profileData.phone}
+                                onChange={handleInputChange}
                               />
                             </div>
                           </div>
@@ -235,6 +293,9 @@ function UpdateProfile() {
                               <input
                                 className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                                 type="date"
+                                name="dob"
+                                value=""
+                                onChange={handleInputChange}
                               />
                             </div>
                           </div>
@@ -245,8 +306,10 @@ function UpdateProfile() {
 
                               <select
                                 className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                                name=""
-                                id=""
+                                type="text"
+                                name="gender"
+                                value={profileData.gender}
+                                onChange={handleInputChange}
                               >
                                 <option value="" disabled selected>
                                   Select your gender
