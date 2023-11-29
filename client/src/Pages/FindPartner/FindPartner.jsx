@@ -52,7 +52,8 @@ const ProfileCard = ({ profile, onClick }) => {
         <div className="">
           <button
             className="bg-pink-500  hover:shadow-xl text-white font-bold py-3 px-5 rounded-full cursor-pointer transition-all duration-500"
-            onClick={() => onClick(profile.id)}>
+            onClick={() => onClick(profile.id)}
+          >
             {changeLanguage ? "বিস্তারিত" : "View Details"}
           </button>
         </div>
@@ -204,7 +205,8 @@ const ProfileSection = () => {
         key={page}
         className={`page-item ${
           currentPage === page ? "text-white bg-[#ff0081] rounded-md" : "m-1"
-        }`}>
+        }`}
+      >
         <button
           onClick={() => handlePageClick(page)}
           className={`page-item ${
@@ -226,14 +228,16 @@ const ProfileSection = () => {
       <div
         className={`md:w-3/5 xl:w-1/5 mr-4 p-4 bg-white shadow-xl xl:h-screen rounded-md ${
           selectedProfile ? "hidden" : "block"
-        }`}>
+        }`}
+      >
         <h1 className="text-2xl font-semibold mb-4 text-center">
           {changeLanguage ? "" : "Seacher Groom or Bridal"}
         </h1>
         <div className="mb-4">
           <label
             htmlFor="roleFilter"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-sm font-medium text-gray-700"
+          >
             {changeLanguage ? "" : "Select Groom/Bridal"}
           </label>
           <select
@@ -241,7 +245,8 @@ const ProfileSection = () => {
             name="roleFilter"
             className="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 border"
             onChange={handleRoleChange}
-            value={selectedRole}>
+            value={selectedRole}
+          >
             <option value={changeLanguage ? "সকল" : "All"}>
               {changeLanguage ? "সকল" : "All"}
             </option>
@@ -301,7 +306,8 @@ const ProfileSection = () => {
         <div className="mb-4">
           <label
             htmlFor="locationFilter"
-            className="block text-sm font-medium text-gray-700">
+            className="block text-sm font-medium text-gray-700"
+          >
             Location
           </label>
           <input
@@ -318,7 +324,8 @@ const ProfileSection = () => {
       <div
         className={`w-full xl:w-4/5 md:ml-10  p-4 flex flex-wrap justify-center xl:justify-start shadow-xl bg-white ${
           selectedProfile ? "hidden" : "block"
-        }`}>
+        }`}
+      >
         {currentProfiles.map((profile) => (
           <div key={profile.id} className="w-full sm:w-2/3 md:w-3/3 xl:w-1/4">
             <ProfileCard profile={profile} onClick={openProfileDetails} />
@@ -333,7 +340,8 @@ const ProfileSection = () => {
               <button
                 onClick={() => goToPage(currentPage - 1)}
                 className="page-link text-2xl text-gray-600 mr-2 items"
-                disabled={currentPage === 1}>
+                disabled={currentPage === 1}
+              >
                 <i className="fa-solid fa-angle-left w-5 text-[#ff0081]"></i>
               </button>
             </li>
@@ -342,7 +350,8 @@ const ProfileSection = () => {
               <button
                 onClick={() => goToPage(currentPage + 1)}
                 className="page-link text-2xl text-gray-600 ml-2"
-                disabled={currentPage === totalPages}>
+                disabled={currentPage === totalPages}
+              >
                 <i className="fa-solid fa-angle-right w-5 text-[#ff0081]"></i>
               </button>
             </li>
@@ -386,11 +395,13 @@ const ProfileSection = () => {
 
             <div className="flex flex-col m-5 overflow-x-auto">
               <table className="table table-fixed border text-left md:mx-20 break-all whitespace-nowrap ">
+                {/* --- Start Personal Information Table ---  */}
                 <thead>
                   <tr className="">
                     <th
                       colSpan="2"
-                      className=" px-4 py-4 text-xl text-gray-700 ">
+                      className=" px-4 py-4 text-xl text-gray-700 "
+                    >
                       {changeLanguage
                         ? "ব্যাক্তিগত তথ্য"
                         : "Personal Information"}
@@ -398,37 +409,531 @@ const ProfileSection = () => {
                   </tr>
                 </thead>
                 <tbody className=" border">
+                  <tr className="border ">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "আইডি" : "ID"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {selectedProfile.id}
+                    </td>
+                  </tr>
                   <tr className="border">
-                    <td className=" px-4 py-2 text-gray-700 border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                       {" "}
                       {changeLanguage ? "নাম" : "Name"}
                     </td>
-                    <td className=" px-4 py-2 text-gray-700 border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                       {selectedProfile.username.charAt(0).toUpperCase() +
                         selectedProfile.username.slice(1)}
                     </td>
                   </tr>
                   <tr className="border">
-                    <td className=" px-4 py-2 text-gray-700 border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ই-মেইল" : "Email"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {selectedProfile.email}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ফোন" : "Phone"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">
+                      {selectedProfile.phone}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ঠিকানা" : "Date of Birth"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {selectedProfile.dob}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                       {" "}
                       {changeLanguage ? "লিঙ্গ" : "Gender"}
                     </td>
-                    <td className=" px-4 py-2 text-gray-700 border">null</td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">
+                      {selectedProfile.gender}
+                    </td>
                   </tr>
                   <tr className="border">
-                    <td className=" px-4 py-2 text-gray-700 border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                       {" "}
-                      {changeLanguage ? "কোর্স" : "Course"}
+                      {changeLanguage ? "বৈবাহিক অবস্থা" : "Marital Status"}
                     </td>
-                    <td className="px-4 py-2 text-gray-700">null</td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  {/* --- End Personal Information Table ---  */}
+
+                  {/* --- Start General Information Table ---  */}
+                  <thead>
+                    <tr className="">
+                      <th
+                        colSpan="2"
+                        className=" px-4 py-4 text-xl text-gray-700 "
+                      >
+                        {changeLanguage
+                          ? "ব্যাক্তিগত তথ্য"
+                          : "General Information"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "বায়োডাটা টাইপ" : "Biodata Type"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
                   </tr>
                   <tr className="border">
-                    <td className=" px-4 py-2 text-gray-700 border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                       {" "}
-                      {changeLanguage ? "ঠিকানা" : "Address"}
+                      {changeLanguage ? "উচ্চতা" : "Height"}
                     </td>
-                    <td className="px-4 py-2 text-gray-700 border">null</td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
                   </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ওজন" : "Weight"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "রক্তের গ্রুপ" : "Blood Group"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ধর্ম" : "Religion"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "জাতীয়তা" : "Nationality"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+
+                  {/* --- End General Information Table ---  */}
+
+                  {/* --- Start Address  Table ---  */}
+                  <thead>
+                    <tr className="">
+                      <th
+                        colSpan="2"
+                        className=" px-4 py-4 text-xl text-gray-700 "
+                      >
+                        {changeLanguage ? "ঠিকানা" : "Address"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tr className="border">
+                    <td
+                      colSpan="2"
+                      className=" px-4 py-2 xl:pl-10 text-gray-700 border"
+                    >
+                      {" "}
+                      {changeLanguage ? "স্থায়ী ঠিকানা" : "Permanent Address"}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "জেলা" : "District"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "উপজেলা" : "Upazila"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "থানা" : "Thana"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "গ্রাম" : "Village"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "এলাকা" : "Area"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td
+                      colSpan="2"
+                      className=" px-4 py-2 xl:pl-10 text-gray-700 border"
+                    >
+                      {" "}
+                      {changeLanguage ? "বর্তমান ঠিকানা" : "Present Address"}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "জেলা" : "District"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "উপজেলা" : "Upazila"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "থানা" : "Thana"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "গ্রাম" : "Village"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "এলাকা" : "Area"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+
+                  {/* --- End Address Table ---  */}
+
+                  {/* --- Start Academic Qualification Table ---  */}
+                  <thead>
+                    <tr className="">
+                      <th
+                        colSpan="2"
+                        className=" px-4 py-4 text-xl text-gray-700 "
+                      >
+                        {changeLanguage
+                          ? "শিক্ষাগত যোগ্যতা"
+                          : "Academic Qualification"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tr className="border">
+                    <td
+                      colSpan={2}
+                      className=" px-4 py-2 xl:pl-10 text-gray-900 border"
+                    >
+                      {" "}
+                      {changeLanguage
+                        ? "মাধ্যমিক সার্টিফিকেট"
+                        : "Secondary Certificate"}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "শিক্ষার ধরণ" : "Education Type"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "গ্রুপ" : "Group"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "পাসের বছর" : "Passing Year"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "সেশন" : "Session"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "জিপিএ" : "GPA"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "স্কুল" : "School"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "বোর্ড" : "Board"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+
+                  <tr className="border">
+                    <td
+                      colSpan={2}
+                      className=" px-4 py-2 xl:pl-10 text-gray-900 border"
+                    >
+                      {" "}
+                      {changeLanguage
+                        ? "উচ্চ মাধ্যমিক সার্টিফিকেট"
+                        : "Higher Secondary Certificate"}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "শিক্ষার ধরণ" : "Education Type"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "গ্রুপ" : "Group"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "পাসের বছর" : "Passing Year"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "সেশন" : "Session"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "সিজিপিএ" : "CGPA"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ইন্সিটিউট" : "Institute"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "বোর্ড" : "Board"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+
+                  <tr className="border">
+                    <td
+                      colSpan={2}
+                      className=" px-4 py-2 xl:pl-10 text-gray-700 border"
+                    >
+                      {" "}
+                      {changeLanguage ? "স্নাতক" : "Geaduation"}
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "শিক্ষার ধরণ" : "Education Type"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "গ্রুপ" : "Group"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "পাসের বছর" : "Passing Year"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "সেশন" : "Session"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "সিজিপিএ" : "CGPA"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ইউনিভার্সিটি" : "Univarsity"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "বোর্ড" : "Board"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+
+                  {/* --- End Academic Qualification Table ---  */}
+
+                  {/* --- Start Family Information Table ---  */}
+                  <thead>
+                    <tr className="">
+                      <th
+                        colSpan="2"
+                        className=" px-4 py-4 text-xl text-gray-700 "
+                      >
+                        {changeLanguage
+                          ? "ব্যাক্তিগত তথ্য"
+                          : "Family Information"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "পিতার নাম" : "Father's Name"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "মাতার নাম" : "Mother's Name"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage
+                        ? "পরিবারে কতজন সদস্য আছে?"
+                        : "How Many Person in Family?"}
+                    </td>
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "ভাই ও বোন" : "Brother & Sister"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700">-</td>
+                  </tr>
+                  <tr className="border">
+                    <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
+                      {" "}
+                      {changeLanguage ? "আর্থিক অবস্থা" : "Financial Status"}
+                    </td>
+                    <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
+                      -
+                    </td>
+                  </tr>
+
+                  {/* --- End Family Information Table ---  */}
+
                   {/* --------------------- */}
                   {auth ? (
                     <>
@@ -436,7 +941,8 @@ const ProfileSection = () => {
                       <tr className="border">
                         <td
                           colSpan={2}
-                          className=" px-4 py-2 text-gray-700 border bg-blue-200">
+                          className=" px-4 py-2 xl:pl-10 text-gray-700 border bg-blue-200"
+                        >
                           <center>
                             {changeLanguage
                               ? "যোগাযোগের জন্য নীচের ই-মেইল বা ফোন নাম্বার ব্যাবহার করুন"
@@ -445,22 +951,22 @@ const ProfileSection = () => {
                         </td>
                       </tr>
                       <tr className="border">
-                        <td className=" px-4 py-2 text-gray-700 border">
+                        <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                           {" "}
                           {changeLanguage ? "ই-মেইল" : "Email"}
                         </td>
-                        <td className=" whitespace-normal px-4 py-2 text-gray-700 border">
+                        <td className=" whitespace-normal px-4 py-2 xl:pl-10 text-gray-700 border">
                           <a href="mailto:masudparvez2050@gmail.com">
                             nubmatrimony@gmail.com
                           </a>
                         </td>
                       </tr>
                       <tr className="border">
-                        <td className=" px-4 py-2 text-gray-700 border">
+                        <td className=" px-4 py-2 xl:pl-10 text-gray-700 border">
                           {" "}
                           {changeLanguage ? "মোবাইল" : "Mobile"}
                         </td>
-                        <td className="px-4 py-2 text-gray-700 border">
+                        <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
                           <a href="tel:+8801601332914"> +880 00000-000000</a>
                         </td>
                       </tr>
@@ -473,7 +979,8 @@ const ProfileSection = () => {
                           <center>
                             <Link
                               to="/login"
-                              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-md">
+                              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-md"
+                            >
                               {changeLanguage
                                 ? "যোগাযোগের তথ্য দেখুন"
                                 : "View Contact Information"}
@@ -490,7 +997,8 @@ const ProfileSection = () => {
             </div>
             <button
               onClick={goBack}
-              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-normal py-2 px-4 rounded-md">
+              className="mt-4 bg-[#ff0081] hover:bg-pink-600 text-white font-normal py-2 px-4 rounded-md"
+            >
               {changeLanguage ? "পিছনে" : "Back"}
             </button>
           </div>

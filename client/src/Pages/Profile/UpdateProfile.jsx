@@ -80,7 +80,7 @@ function UpdateProfile() {
               {/*  --- End Left Sidebar ---  */}
 
               {/*  ---Start update Profile Side ---  */}
-              <div className=" w-2/4  mx-auto sm:px-6 lg:px-8">
+              <div className=" w-[70%]  mx-auto sm:px-6 lg:px-8">
                 {/* ---start Button menu----- */}
                 <div className="bg-white overflow-hidden shadow-xl sm:rounded-lg mb-4 p-4 flex justify-center flex-wrap text-gray-600 space-x-6">
                   <button
@@ -137,131 +137,134 @@ function UpdateProfile() {
                 {/* ---End Button menu----- */}
 
                 <div className="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                  <div className="p-6 sm:px-20 bg-white border-b border-gray-200">
-                    <div className="mt-2 text-gray-600">
-                      <div className="flex items-center">
-                        <img
-                          className="h-32 w-32 rounded-md object-cover "
-                          src={
-                            profileData && profileData.profile_pic
-                              ? getImageUrl(profileData.profile_pic)
-                              : profileData && profileData.gender === "Male"
-                              ? "../src/assets/images/groom.png"
-                              : profileData && profileData.gender === "Female"
-                              ? "../src/assets/images/bridal.png"
-                              : null // or provide a default image URL
-                          }
-                          alt="Profile image"
-                        />
-                        <div className="ml-4">
-                          <input
-                            type="file"
-                            onChange={handleFile}
-                            name="profile_pic"
-                            className="leading-6 font-medium mb-6 text-sm text-gray-300 "
-                          />
-                          <div>
-                            <button
-                              onClick={handleUpload}
-                              className="bg-[#ff0081] hover:bg-[#e3215b] text-white py-2 px-4 rounded-full transition-all duration-300 shadow-xl mt-6"
-                            >
-                              Update Photo
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* -------Start Personal Information------- */}
                   {selectedTab === 1 && (
-                    <form className="m-4 mx-8 p-4 font-normal  text-gray-600">
-                      <h1 className="text-xl font-bold text-gray-800 pb-2 mb-3 border-b ml-10">
-                        Personal Information
-                      </h1>
-                      <div className="ml-28 m-2 p-2">
-                        <div className="">
-                          <p className="">ID</p>
-                          <input
-                            className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      {/* ------------- */}
-                      <div className="ml-28 m-2 p-2">
-                        <div className="">
-                          <p className="">Full Name</p>
-                          <input
-                            className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                            type="text"
-                          />
+                    <>
+                      <div className="p-6 sm:px-20 bg-white border-b border-gray-200">
+                        <div className="mt-2 text-gray-600">
+                          <div className="flex items-center">
+                            <img
+                              className="h-32 w-32 rounded-md object-cover "
+                              src={
+                                profileData && profileData.profile_pic
+                                  ? getImageUrl(profileData.profile_pic)
+                                  : profileData && profileData.gender === "Male"
+                                  ? "../src/assets/images/groom.png"
+                                  : profileData &&
+                                    profileData.gender === "Female"
+                                  ? "../src/assets/images/bridal.png"
+                                  : null // or provide a default image URL
+                              }
+                              alt="Profile image"
+                            />
+                            <div className="ml-4">
+                              <input
+                                type="file"
+                                onChange={handleFile}
+                                name="profile_pic"
+                                className="leading-6 font-medium mb-6 text-sm text-gray-300 "
+                              />
+                              <div>
+                                <button
+                                  onClick={handleUpload}
+                                  className="bg-[#ff0081] hover:bg-[#e3215b] text-white py-2 px-4 rounded-full transition-all duration-300 shadow-xl mt-6"
+                                >
+                                  Update Photo
+                                </button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
-                      <div className="flex">
-                        {/* ------------- */}
-                        <div className="ml-28 m-2 p-2 w-full">
+                      <form className="m-4 mx-8 p-4 font-normal  text-gray-600">
+                        <h1 className="text-xl font-bold text-gray-800 pb-2 mb-3 border-b ml-10">
+                          Personal Information
+                        </h1>
+                        <div className="ml-28 m-2 p-2">
                           <div className="">
-                            <p className="">Email</p>
-                            <input
-                              className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                              type="email"
-                            />
-                          </div>
-                        </div>
-                        {/* ------------- */}
-                        <div className="ml-4 m-2 p-2 w-full">
-                          <div className="">
-                            <p className="">Phone</p>
+                            <p className="">ID</p>
                             <input
                               className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
                               type="text"
                             />
                           </div>
                         </div>
-                      </div>
-
-                      <div className="flex">
-                        {" "}
                         {/* ------------- */}
-                        <div className="ml-28 m-2 p-2 w-full">
+                        <div className="ml-28 m-2 p-2">
                           <div className="">
-                            <p className="">Date of Birth</p>
+                            <p className="">Full Name</p>
                             <input
                               className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                              type="date"
+                              type="text"
                             />
                           </div>
                         </div>
-                        {/* ------------- */}
-                        <div className="ml-2 m-2 p-2 w-full">
-                          <div className="">
-                            <p className="">Gender</p>
 
-                            <select
-                              className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                              name=""
-                              id=""
-                            >
-                              <option value="" disabled selected>
-                                Select your gender
-                              </option>
-                              <option value="Male">Male</option>
-                              <option value="Female">Female</option>
-                            </select>
+                        <div className="flex">
+                          {/* ------------- */}
+                          <div className="ml-28 m-2 p-2 w-full">
+                            <div className="">
+                              <p className="">Email</p>
+                              <input
+                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                                type="email"
+                              />
+                            </div>
+                          </div>
+                          {/* ------------- */}
+                          <div className="ml-4 m-2 p-2 w-full">
+                            <div className="">
+                              <p className="">Phone</p>
+                              <input
+                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                                type="text"
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <button
-                        type="submit"
-                        className="my-4 ml-28 py-4 px-10 bg-[#ff0081] text-white rounded-full"
-                      >
-                        Save
-                      </button>
 
-                      {/* ------------- */}
-                    </form>
+                        <div className="flex">
+                          {" "}
+                          {/* ------------- */}
+                          <div className="ml-28 m-2 p-2 w-full">
+                            <div className="">
+                              <p className="">Date of Birth</p>
+                              <input
+                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                                type="date"
+                              />
+                            </div>
+                          </div>
+                          {/* ------------- */}
+                          <div className="ml-2 m-2 p-2 w-full">
+                            <div className="">
+                              <p className="">Gender</p>
+
+                              <select
+                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                                name=""
+                                id=""
+                              >
+                                <option value="" disabled selected>
+                                  Select your gender
+                                </option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          type="submit"
+                          className="my-4 ml-28 py-4 px-10 bg-[#ff0081] text-white rounded-full"
+                        >
+                          Save
+                        </button>
+
+                        {/* ------------- */}
+                      </form>
+                    </>
                   )}
 
                   {/* -------End Personal Information------- */}
@@ -789,7 +792,7 @@ function UpdateProfile() {
               {/*  ---End update Profile Side ---  */}
 
               {/* ------start blank side -------- */}
-              <div className="w-1/4  mx-auto sm:px-6 lg:px-8"></div>
+              <div className="  mx-auto sm:px-6 lg:px-8"></div>
               {/* ------End blank side -------- */}
             </div>
           </div>

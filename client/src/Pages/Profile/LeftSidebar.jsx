@@ -65,7 +65,7 @@ function LeftSidebar() {
             }
             alt="Profile image"
           />
-          <p className="text-sm text-gray-500">ID: 0{profileData.id}</p>
+          <p className="text-sm text-gray-500">ID: {profileData.id}</p>
           <p className="text-sm text-gray-500">{profileData.username}</p>
           <div className="mt-10">
             {/* ---button--- */}

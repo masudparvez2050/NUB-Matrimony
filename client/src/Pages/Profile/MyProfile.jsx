@@ -52,21 +52,21 @@ function MyProfile() {
                     {" "}
                     <Link
                       to="/profile/details"
-                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200"
+                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200 my-5"
                     >
                       <i className="fa-solid fa-user mr-4"></i>
                       Profile
                     </Link>
                     <Link
                       to="/profile/updateprofile"
-                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200"
+                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200 my-5"
                     >
                       <i className="fa-solid fa-address-card mr-4"></i>
                       Update Profile
                     </Link>
                     <Link
                       to="/profile/favoritelist"
-                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200"
+                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200 my-5"
                     >
                       <p>
                         <i className="fa-solid fa-heart mr-4"></i>
@@ -75,14 +75,14 @@ function MyProfile() {
                     </Link>
                     <Link
                       to="/profile/settings"
-                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200"
+                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200 my-5"
                     >
                       <i className="fa-solid fa-sliders mr-4"></i>
                       Settings
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200"
+                      className=" mx-4  p-4 rounded-3xl  font-semibold flex items-center justify-center h-[280px] w-[380px] border text-4xl hover:text-6xl text-gray-600 hover:bg-[#ff0081] hover:text-white transition-all duration-500 hover:shadow-xl hover:shadow-purple-300 hover:border-none shadow-md shadow-purple-200 my-5"
                     >
                       <i className="fa-solid fa-right-from-bracket"></i>
                       Logout
