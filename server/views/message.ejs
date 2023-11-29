@@ -7,9 +7,17 @@
     <title>Reset Success</title>
   </head>
   <body>
-    <% if (message) { %>
-    <h1><%= message %></h1>
-    <% } %>
-    <a href="http://localhost:5173/login">Go to Login Page</a>
+    <div class="flex justify-center items-center h-screen">
+      <div class="bg-pink-100 m-2 p-10 rounded-xl shadow-xl">
+        <% if (message) { %>
+        <h1><%= message %></h1>
+        <% } %>
+        <a
+          class="bg-[#ff0081] text-white rounded-full py-2 px-6 text-lg"
+          href="http://localhost:5173/login"
+          >Go to Login Page</a
+        >
+      </div>
+    </div>
   </body>
 </html>

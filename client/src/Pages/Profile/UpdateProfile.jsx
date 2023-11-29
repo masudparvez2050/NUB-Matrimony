@@ -42,7 +42,7 @@ function UpdateProfile() {
       .catch((err) => console.log(err));
   };
 
-  // profileData
+  // profileData Api
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
@@ -62,6 +62,8 @@ function UpdateProfile() {
   // if (!auth) {
   //   return <Navigate to="/login" />; //
   // }
+
+  // Update profile API
 
   return (
     <>
