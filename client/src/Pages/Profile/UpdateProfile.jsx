@@ -114,9 +114,9 @@ function UpdateProfile() {
       })
       .catch((err) => console.log(err));
   };
-
+  // Date Formatting
   const formattedDate = profileData.dob
-    ? format(new Date(profileData.dob), "dd-MM-yyyy")
+    ? format(new Date(profileData.dob), "dd-MMM-yyyy")
     : "Invalid Date";
 
   return (

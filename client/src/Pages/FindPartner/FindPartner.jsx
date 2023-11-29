@@ -6,6 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Header from "../../Components/Layout/Header";
 import Footer from "../../Components/Layout/Footer";
+import { format } from "date-fns";
 
 // import {
 //   profileDataStudent,
@@ -452,7 +453,9 @@ const ProfileSection = () => {
                       {changeLanguage ? "ঠিকানা" : "Date of Birth"}
                     </td>
                     <td className="px-4 py-2 xl:pl-10 text-gray-700 border">
-                      {selectedProfile.dob}
+                      {selectedProfile.dob
+                        ? format(new Date(selectedProfile.dob), "dd-MMM-yyyy")
+                        : "Invalid Date"}
                     </td>
                   </tr>
                   <tr className="border">
