@@ -1,14 +1,16 @@
 import React from "react";
 import Header from "../../Components/Layout/Header";
 import Footer from "../../Components/Layout/Footer";
+import { useLanguage } from "../../contextAPI/ChangeLanguage";
 
 function Contact() {
+  const { changeLanguage } = useLanguage();
   return (
     <div>
       <Header />
 
       <div className=" text-4xl h-48 text-center text-white font-bold flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-        <h1 className="">Contact us</h1>
+        <h1 className="">{changeLanguage ? "যোগাযোগ করুন" : "Contact us"}</h1>
       </div>
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[550px]">
@@ -17,7 +19,7 @@ function Contact() {
               <label
                 htmlFor="name"
                 className="mb-3 block text-base font-medium text-[#07074D]">
-                Full Name
+                {changeLanguage ? "পূর্ণনাম" : "Full Name"}
               </label>
               <input
                 type="text"
@@ -31,7 +33,7 @@ function Contact() {
               <label
                 for="email"
                 className="mb-3 block text-base font-medium text-[#07074D]">
-                Email Address
+                {changeLanguage ? "ইমেইল এড্রেস" : "Email Address"}
               </label>
               <input
                 type="email"
@@ -45,7 +47,7 @@ function Contact() {
               <label
                 for="subject"
                 className="mb-3 block text-base font-medium text-[#07074D]">
-                Subject
+                {changeLanguage ? "বিষয়" : "Subject"}
               </label>
               <input
                 type="text"
@@ -59,7 +61,7 @@ function Contact() {
               <label
                 for="message"
                 className="mb-3 block text-base font-medium text-[#07074D]">
-                Message
+                {changeLanguage ? "মেসেজ" : "Message"}
               </label>
               <textarea
                 rows="4"
@@ -70,7 +72,7 @@ function Contact() {
             </div>
             <div>
               <button className="bg-rose-700 hover:bg-rose-600 rounded-md py-3 px-8 text-base font-semibold text-white outline-none">
-                Submit
+                {changeLanguage ? "সাবমিট" : "Submit"}
               </button>
             </div>
           </form>
