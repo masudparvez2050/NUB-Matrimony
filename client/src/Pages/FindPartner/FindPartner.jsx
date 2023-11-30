@@ -24,7 +24,7 @@ const ProfileCard = ({ profile, onClick }) => {
         <div className="bg-pink-500 h-24 px-4 rounded-2xl transition-all duration-500"></div>
         <div className="flex justify-center">
           <img
-            className="rounded-full  w-32 -mt-14  border-2 border-[#ff0081]"
+            className="rounded-full  w-32 -mt-14  border-2 border-[#ff0081] bg-white"
             src={
               profile && profile.profile_pic
                 ? getImageUrl(profile.profile_pic)
@@ -91,7 +91,7 @@ const ProfileSection = () => {
   const [searchId, setSearchId] = useState("");
   const [selectedProfile, setSelectedProfile] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const profilesPerPage = 9;
+  const profilesPerPage = 8;
 
   const handleRoleChange = (event) => {
     setSelectedRole(event.target.value);
@@ -368,7 +368,7 @@ const ProfileSection = () => {
           <div className="bg-white shadow-xl rounded-md p-4 text-center">
             <div className="md:ml-32 flex items-center">
               <img
-                className="w-40 h-40 rounded-full mb-2 border-2 border-[#ff0081]"
+                className="w-40 h-40 rounded-full mb-2 border-2 border-[#ff0081] bg-white"
                 src={
                   selectedProfile && selectedProfile.profile_pic
                     ? getImageUrl(selectedProfile.profile_pic)
