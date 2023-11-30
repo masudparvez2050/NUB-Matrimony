@@ -277,7 +277,7 @@ const Header = () => {
                     <span className="sr-only">Open user menu</span>
 
                     <img
-                      className="h-14 w-14 rounded-full border border-[#ff0081]"
+                      className="h-14 w-14 rounded-full border border-[#ff0081] bg-white"
                       src={
                         profileData && profileData.profile_pic
                           ? getImageUrl(profileData.profile_pic)
