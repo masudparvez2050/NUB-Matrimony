@@ -3,9 +3,12 @@ import Footer from "../../Components/Layout/Footer";
 import Header from "../../Components/Layout/Header";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import BASE_URL from "../../utils/URL";
 
 function ResetPassword() {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -15,10 +18,12 @@ function ResetPassword() {
     e.preventDefault();
 
     try {
-      const url = `/user/forget-password`;
-      const response = await axios.post(url, { email });
+      const url = `${BASE_URL}/user/forget-password`;
+      const response = await axios.post(url, { email: email });
 
       toast.success(response.data.message);
+      toast.success("Please check your email for reset password link");
+      navigate("/login");
 
       // You can reset the form or navigate to the login page here
     } catch (error) {
@@ -60,7 +65,7 @@ function ResetPassword() {
             <button
               className="my-2 py-2 px-4 rounded-md bg-pink-500 text-white font-semibold drop-shadow-md hover:shadow-blue-300 w-full"
               onClick={handleResetPassword}
-              type="button"
+              type="submit"
             >
               Submit
             </button>

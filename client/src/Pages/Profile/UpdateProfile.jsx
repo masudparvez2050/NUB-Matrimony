@@ -298,9 +298,29 @@ function UpdateProfile() {
 
                         <div className="flex">
                           {" "}
+                          {/* ------------- */}
+                          <div className="ml-28 m-2 p-2 w-[45%]">
+                            <div className="">
+                              <p className="">Gender</p>
+
+                              <select
+                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
+                                type="text"
+                                name="gender"
+                                value={profileData.gender}
+                                onChange={handleInputChange}
+                              >
+                                <option value="" disabled selected>
+                                  Select your gender
+                                </option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                            </div>
+                          </div>
                           <div className="flex justify-start">
                             {/* ------------- */}
-                            <div className="ml-28 my-2 py-2 ">
+                            <div className="ml-2 my-2 py-2 ">
                               <div className="">
                                 <p className="">Date of Birth</p>
                                 <p
@@ -323,26 +343,6 @@ function UpdateProfile() {
                                   onChange={handleInputChange}
                                 />
                               </div>
-                            </div>
-                          </div>
-                          {/* ------------- */}
-                          <div className="ml-2 m-2 p-2 w-full">
-                            <div className="">
-                              <p className="">Gender</p>
-
-                              <select
-                                className="border w-full p-3 my-1 rounded-lg focus:outline-none focus:border-pink-300 focus:ring focus:ring-pink-200"
-                                type="text"
-                                name="gender"
-                                value={profileData.gender}
-                                onChange={handleInputChange}
-                              >
-                                <option value="" disabled selected>
-                                  Select your gender
-                                </option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                              </select>
                             </div>
                           </div>
                         </div>

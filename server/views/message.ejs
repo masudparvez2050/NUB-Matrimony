@@ -9,14 +9,16 @@
   <body>
     <div class="flex justify-center items-center h-screen">
       <div class="bg-pink-100 m-2 p-10 rounded-xl shadow-xl">
-        <% if (message) { %>
-        <h1><%= message %></h1>
-        <% } %>
-        <a
-          class="bg-[#ff0081] text-white rounded-full py-2 px-6 text-lg"
-          href="http://localhost:5173/login"
-          >Go to Login Page</a
-        >
+        <center>
+          <% if (message) { %>
+          <h1 class="my-4 py-2 mb-10 text-xl font-semibold"><%= message %></h1>
+          <% } %>
+          <a
+            class="bg-[#ff0081] text-white rounded-full py-2 px-6 text-lg"
+            href="http://localhost:5173/login"
+            >Go to Login Page</a
+          >
+        </center>
       </div>
     </div>
   </body>

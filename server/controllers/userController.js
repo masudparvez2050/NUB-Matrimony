@@ -142,6 +142,34 @@ const authenticate = (req, res, next) => {
 const deleteUser = (req, res) => {
   const userId = req.params.id; // User ID to delete
 
+  // First, retrieve the current profile image filename from the database
+  const getProfileImageSql = "SELECT profile_pic FROM users WHERE id = ?";
+  db.query(getProfileImageSql, [userId], (err, results) => {
+    if (err) {
+      return res.status(500).json({ Message: "Error" });
+    }
+
+    const currentImage = results[0] ? results[0].profile_pic : null;
+    console.log(`currentImage ${currentImage}`);
+
+    // Delete the previous image if it exists
+    if (currentImage) {
+      const previousImagePath = path.join(
+        __dirname,
+        "../public/",
+        currentImage
+      );
+
+      console.log(`previousImagePath: ${previousImagePath}`);
+
+      fs.unlink(previousImagePath, (deleteErr) => {
+        if (deleteErr) {
+          console.error("Error deleting previous image:", deleteErr);
+        }
+      });
+    }
+  });
+
   // Delete the user account from the database
   db.query("DELETE FROM users WHERE id = ?", userId, (err, result) => {
     if (err) {
@@ -151,21 +179,49 @@ const deleteUser = (req, res) => {
   });
 };
 
+// user profile update controller
 const updateUser = (req, res) => {
-  // const { firstname, lastname, phone, email, role } = req.body;
-  console.log(req.body);
   const { id } = req.params; // Profile ID to update
+  const { password, ...profile } = req.body;
 
-  const profile = req.body;
+  // Check if the password field is present in the request body
+  if (password) {
+    // Hash the password using bcrypt
+    bcrypt.hash(password, 10, (hashErr, hashedPassword) => {
+      if (hashErr) {
+        return res.status(500).json({ error: "Error hashing password" });
+      }
 
-  db.query("UPDATE users SET ? WHERE id = ?", [profile, id], (err, result) => {
-    if (err) {
-      return res.status(400).json({ error: "Profile update failed" });
-    }
-    res.status(200).json({ Status: "Success" });
-  });
+      // Update the user profile in the database with the hashed password
+      const updatedProfile = { ...profile, password: hashedPassword };
+
+      db.query(
+        "UPDATE users SET ? WHERE id = ?",
+        [updatedProfile, id],
+        (updateErr, result) => {
+          if (updateErr) {
+            return res.status(400).json({ error: "Profile update failed" });
+          }
+          res.status(200).json({ Status: "Success" });
+        }
+      );
+    });
+  } else {
+    // If no password field, update the user profile without hashing the password
+    db.query(
+      "UPDATE users SET ? WHERE id = ?",
+      [profile, id],
+      (err, result) => {
+        if (err) {
+          return res.status(400).json({ error: "Profile update failed" });
+        }
+        res.status(200).json({ Status: "Success" });
+      }
+    );
+  }
 };
 
+// user Authentication Profile API
 const fetchAuthStudent = (req, res) => {
   db.query("SELECT * FROM users", (err, profiles) => {
     if (err) {

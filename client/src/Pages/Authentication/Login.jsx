@@ -22,22 +22,37 @@ function Login() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
+
     try {
       const url = `${BASE_URL}/user/login`;
       const response = await axios.post(url, formData);
-      // Store the token in local storage or cookies for future authenticated requests
 
+      // Store the token in HttpOnly cookies for better security
+      // Set other necessary session information as needed
       setSessionCookie(response.data.token);
       setSessionCookieGender(response.data.gender);
       setSessionCookieUserid(response.data.userid);
-      console.log(response.data);
+
       toast.success(response.data.message);
 
+      // Redirect to the home page
       navigate("/");
       window.location.reload();
     } catch (error) {
-      toast.error(error.response.request.statusText);
-      console.log(error.response.request.statusText);
+      // Handle different types of errors
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        console.error("Server responded with an error:", error.response.data);
+        toast.error(error.response.data.error);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("No response received:", error.request);
+        toast.error("Network error. Please try again.");
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error setting up the request:", error.message);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
     }
   };
 
