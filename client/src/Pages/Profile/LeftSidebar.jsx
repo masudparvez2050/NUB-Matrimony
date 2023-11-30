@@ -76,7 +76,7 @@ function LeftSidebar() {
                 className="border rounded-full w-full p-5 my-4  group-hover:bg-[#ff0081] drop-shadow-md hover:shadow-xl hover:border-none transition-all duration-300 hover:text-white text-gray-600 hover:text-xl"
               >
                 <i className="fa-solid fa-user mr-2"></i>
-                Profile
+                My Profile
               </Link>
             </div>
             {/* ---button--- */}

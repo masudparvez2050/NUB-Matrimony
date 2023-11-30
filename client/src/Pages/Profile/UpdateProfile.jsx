@@ -5,8 +5,6 @@ import LeftSidebar from "./LeftSidebar";
 import axios from "axios";
 import BASE_URL, { getImageUrl } from "../../utils/URL";
 import { format, parse } from "date-fns";
-import { useAuth } from "../../contextAPI/authContext";
-import { Navigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 function UpdateProfile() {
@@ -22,7 +20,6 @@ function UpdateProfile() {
     dob: "",
     gender: "",
   });
-  const { auth } = useAuth();
 
   const handleTabClick = (tabNumber) => {
     setSelectedTab(tabNumber);
@@ -78,10 +75,6 @@ function UpdateProfile() {
         console.error(error);
       });
   }, []);
-
-  if (!auth) {
-    return <Navigate to="/login" />; //
-  }
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -200,7 +193,7 @@ function UpdateProfile() {
                         <div className="mt-2 text-gray-600">
                           <div className="flex items-center">
                             <img
-                              className="h-32 w-32 rounded-md object-cover "
+                              className="h-32 w-32 rounded-md object-cover"
                               src={
                                 profileData && profileData.profile_pic
                                   ? getImageUrl(profileData.profile_pic)

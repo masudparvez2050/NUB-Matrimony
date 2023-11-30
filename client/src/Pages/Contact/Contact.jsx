@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../../Components/Layout/Header";
 import Footer from "../../Components/Layout/Footer";
 import { useLanguage } from "../../contextAPI/ChangeLanguage";
@@ -18,7 +17,8 @@ function Contact() {
             <div className="mb-5">
               <label
                 htmlFor="name"
-                className="mb-3 block text-base font-medium text-[#07074D]">
+                className="mb-3 block text-base font-medium text-[#07074D]"
+              >
                 {changeLanguage ? "পুরো নাম" : "Full Name"}
               </label>
               <input
@@ -33,8 +33,9 @@ function Contact() {
             </div>
             <div className="mb-5">
               <label
-                for="email"
-                className="mb-3 block text-base font-medium text-[#07074D]">
+                htmlFor="email"
+                className="mb-3 block text-base font-medium text-[#07074D]"
+              >
                 {changeLanguage ? "ইমেইল এড্রেস" : "Email Address"}
               </label>
               <input
@@ -51,8 +52,9 @@ function Contact() {
             </div>
             <div className="mb-5">
               <label
-                for="subject"
-                className="mb-3 block text-base font-medium text-[#07074D]">
+                htmlFor="subject"
+                className="mb-3 block text-base font-medium text-[#07074D]"
+              >
                 {changeLanguage ? "বিষয়" : "Subject"}
               </label>
               <input
@@ -67,8 +69,9 @@ function Contact() {
             </div>
             <div className="mb-5">
               <label
-                for="message"
-                className="mb-3 block text-base font-medium text-[#07074D]">
+                htmlFor="message"
+                className="mb-3 block text-base font-medium text-[#07074D]"
+              >
                 {changeLanguage ? "মেসেজ" : "Message"}
               </label>
               <textarea
@@ -78,7 +81,8 @@ function Contact() {
                 placeholder={
                   changeLanguage ? "আপনার মেসেজটি লিখুন" : "Type your message"
                 }
-                className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+                className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              ></textarea>
             </div>
             <div>
               <button className="bg-rose-700 hover:bg-rose-600 rounded-md py-3 px-8 text-base font-semibold text-white outline-none">

@@ -9,3 +9,5 @@ export const getImageUrl = (path) => `${BASE_URL}/${path}`;
 export const API = axios.create({
   baseURL: "http://localhost:8000", //backend API URL
 });
+
+export const HomeURL = "http://localhost:5173";

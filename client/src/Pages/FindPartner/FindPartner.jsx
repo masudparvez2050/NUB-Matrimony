@@ -368,7 +368,7 @@ const ProfileSection = () => {
           <div className="bg-white shadow-xl rounded-md p-4 text-center">
             <div className="md:ml-32 flex items-center">
               <img
-                className="w-40 rounded-full mb-2 border-2 border-[#ff0081]"
+                className="w-40 h-40 rounded-full mb-2 border-2 border-[#ff0081]"
                 src={
                   selectedProfile && selectedProfile.profile_pic
                     ? getImageUrl(selectedProfile.profile_pic)

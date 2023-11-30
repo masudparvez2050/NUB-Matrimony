@@ -4,6 +4,7 @@ import Footer from "./../../Components/Layout/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import BASE_URL, { getImageUrl } from "../../utils/URL";
+import { format } from "date-fns";
 
 function MyProfileDetails() {
   const [profileData, setProfileData] = useState([]);
@@ -57,10 +58,12 @@ function MyProfileDetails() {
                         />
                         <div className="ml-4">
                           <h2 className="text-lg leading-6 font-medium text-gray-900">
-                            Masudur Rahman
+                            {profileData.username}
                           </h2>
-                          <p className="text-sm text-gray-500">Dhaka</p>
-                          <p className="text-sm text-gray-500">ID: 01</p>
+                          <p className="text-sm text-gray-500">Address</p>
+                          <p className="text-sm text-gray-500">
+                            ID: {profileData.id}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -74,42 +77,46 @@ function MyProfileDetails() {
                     <div className="ml-28 border-b m-6 p-2">
                       <div className="flex">
                         <p className="w-1/4">ID</p>
-                        <p className="w-2/4">01</p>
+                        <p className="w-2/4">{profileData.id}</p>
                       </div>
                     </div>
                     {/* ------------- */}
                     <div className="ml-28 border-b m-6 p-2">
                       <div className="flex">
                         <p className="w-1/4">Name</p>
-                        <p className="w-2/4">Masudur Rahman</p>
+                        <p className="w-2/4">{profileData.username}</p>
                       </div>
                     </div>
                     {/* ------------- */}
                     <div className="ml-28 border-b m-6 p-2">
                       <div className="flex">
                         <p className="w-1/4">Email</p>
-                        <p className="w-2/4">masudparvez2050@gmail.com</p>
+                        <p className="w-2/4">{profileData.email}</p>
                       </div>
                     </div>
                     {/* ------------- */}
                     <div className="ml-28 border-b m-6 p-2">
                       <div className="flex">
                         <p className="w-1/4">Phone</p>
-                        <p className="w-2/4">+880 1686 771198</p>
+                        <p className="w-2/4">{profileData.phone}</p>
                       </div>
                     </div>
                     {/* ------------- */}
                     <div className="ml-28 border-b m-6 p-2">
                       <div className="flex">
                         <p className="w-1/4">Date of Birth</p>
-                        <p className="w-2/4">18 March 1995</p>
+                        <p className="w-2/4">
+                          {profileData.dob
+                            ? format(new Date(profileData.dob), "dd-MMM-yyyy")
+                            : "Invalid Date"}
+                        </p>
                       </div>
                     </div>
                     {/* ------------- */}
                     <div className="ml-28 border-b m-6 p-2">
                       <div className="flex">
                         <p className="w-1/4">Gender</p>
-                        <p className="w-2/4">Male</p>
+                        <p className="w-2/4">{profileData.gender}</p>
                       </div>
                     </div>
                     {/* ------------- */}

@@ -17,6 +17,7 @@ import { Toaster } from "react-hot-toast";
 import UserProfile from "./Pages/test";
 import { AuthProvider } from "./contextAPI/authContext";
 import Profile from "./Pages/Profile";
+import Page_404 from "./Pages/404/Page_404";
 
 Toaster;
 function App() {
@@ -40,6 +41,7 @@ function App() {
               <Route path="/reset" element={<ResetPassword />} />
               <Route path="/profile/*" element={<Profile />} />
               <Route path="/test" element={<UserProfile />} />
+              <Route path="/*" element={<Page_404 />} />
             </Routes>
           </BrowserRouter>
         </LanguageProvider>
